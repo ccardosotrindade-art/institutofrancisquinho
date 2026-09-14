@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, BookOpenCheck, HeartHandshake, Info, Pause, Play, Scale, ShieldCheck, Stethoscope, Users } from "lucide-react";
-import { AlertBanner, ContactDetails, InfoCard, SectionTitle, SimpleForm, commonIcons, francisquinhoAsset } from "@/components/site";
+import { AlertBanner, ContactDetails, InfoCard, SectionTitle, SimpleForm, commonIcons } from "@/components/site";
 import { Button } from "@/components/ui/button";
 import { pageHead } from "@/lib/seo";
 import heroAcolhimento from "@/assets/hero-acolhimento.jpg";
@@ -25,7 +25,7 @@ const heroSlides = [
   { eyebrow: "Informação, acolhimento e apoio", title: "Você não precisa enfrentar uma doença rara sozinho.", description: "O Instituto Francisquinho acolhe, informa e orienta famílias que convivem com a CLN2 e outras doenças raras.", image: heroAcolhimento, alt: "Família caminhando unida em um jardim com referências sutis ao DNA", action: "Recebi um diagnóstico", to: "/recebi-o-diagnostico" as const },
   { eyebrow: "Orientação para cada etapa", title: "Informação clara ajuda a encontrar caminhos.", description: "Reunimos conteúdos introdutórios para apoiar conversas com profissionais e organizar os próximos passos.", image: heroOrientacao, alt: "Profissional de saúde orientando uma mãe e uma criança em um caminho de descobertas", action: "Conheça os primeiros passos", to: "/recebi-o-diagnostico" as const },
   { eyebrow: "Uma rede que acolhe", title: "Juntos, ampliamos o apoio às famílias.", description: "Conheça formas de participar, colaborar e fortalecer uma comunidade dedicada às pessoas com doenças raras.", image: heroComunidade, alt: "Comunidade diversa reunida em torno de uma criança e sua família", action: "Veja como ajudar", to: "/como-ajudar" as const },
-];
+] as const;
 
 function HeroCarousel() {
   const [active, setActive] = useState(0);

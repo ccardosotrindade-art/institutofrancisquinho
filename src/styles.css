@@ -165,4 +165,116 @@
 @utility contact-row { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: start; gap: .75rem; color: var(--primary); & svg { margin-top: .125rem; height: 1.25rem; width: 1.25rem; flex-shrink: 0; color: var(--accent-strong); } }
 @utility skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; background: var(--primary); color: var(--primary-foreground); padding: .75rem 1rem; border-radius: var(--radius); &:focus { top: 1rem; } }
 
+@layer components {
+  .logo-lockup {
+    border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+    border-radius: var(--radius);
+    background: color-mix(in oklab, var(--background) 92%, var(--secondary));
+    box-shadow: 0 8px 24px color-mix(in oklab, var(--primary) 7%, transparent);
+    overflow: hidden;
+  }
+
+  .hero-carousel {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-soft);
+  }
+
+  .hero-slide-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity .8s ease, transform 6.5s ease;
+  }
+
+  .hero-slide-image.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, color-mix(in oklab, var(--background) 98%, transparent) 0%, color-mix(in oklab, var(--background) 92%, transparent) 36%, color-mix(in oklab, var(--background) 35%, transparent) 68%, transparent 100%);
+  }
+
+  .carousel-dot {
+    height: .75rem;
+    width: .75rem;
+    border: 2px solid var(--background);
+    border-radius: 999px;
+    background: var(--muted-foreground);
+    box-shadow: 0 1px 4px color-mix(in oklab, var(--primary) 20%, transparent);
+    transition: width .2s ease, background .2s ease;
+  }
+
+  .carousel-dot.is-active {
+    width: 2.5rem;
+    background: var(--accent-strong);
+  }
+
+  .hero-illustration-wrap {
+    height: 18rem;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: 0 18px 48px color-mix(in oklab, var(--primary) 14%, transparent);
+    animation: gentle-float 7s ease-in-out infinite;
+  }
+
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .45;
+    background-image: radial-gradient(circle at 12% 20%, color-mix(in oklab, var(--accent-strong) 14%, transparent) 0 2px, transparent 3px), radial-gradient(circle at 20% 74%, color-mix(in oklab, var(--primary) 10%, transparent) 0 3px, transparent 4px);
+    background-size: 80px 80px, 130px 130px;
+  }
+
+  .info-card {
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in oklab, var(--accent-strong) 40%, var(--border));
+    box-shadow: 0 18px 42px color-mix(in oklab, var(--primary) 13%, transparent);
+  }
+
+  .floating-help {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 35;
+    border: 2px solid var(--background);
+    animation: floating-pulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes floating-pulse {
+  0%, 100% { box-shadow: 0 10px 28px color-mix(in oklab, var(--accent-strong) 25%, transparent); }
+  50% { box-shadow: 0 12px 34px color-mix(in oklab, var(--accent-strong) 42%, transparent); }
+}
+
+@media (max-width: 47.99rem) {
+  .hero-scrim {
+    background: linear-gradient(90deg, color-mix(in oklab, var(--background) 97%, transparent) 0%, color-mix(in oklab, var(--background) 87%, transparent) 64%, color-mix(in oklab, var(--background) 58%, transparent) 100%);
+  }
+
+  .hero-slide-image { object-position: 62% center; }
+  .floating-help { bottom: .75rem; right: .75rem; }
+}
+
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }

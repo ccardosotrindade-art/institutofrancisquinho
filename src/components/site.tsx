@@ -3,7 +3,6 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import {
   ArrowRight,
   CalendarDays,
-  ChevronRight,
   CircleAlert,
   Dna,
   FileClock,
