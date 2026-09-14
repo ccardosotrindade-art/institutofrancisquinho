@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   BookOpenText,
   Dna,
@@ -23,10 +23,10 @@ export const Route = createFileRoute("/outras-doencas-raras")({
 });
 
 const groups = [
-  { title: "Doenças genéticas", desc: "A maioria (cerca de 80%) das doenças raras tem origem genética, muitas vezes hereditária." },
-  { title: "Doenças raras de origem infecciosa ou imunológica", desc: "Incluem condições autoimunes e infecções raras com curso pouco comum." },
-  { title: "Malformações congênitas raras", desc: "Alterações presentes desde o nascimento, isoladas ou associadas a síndromes." },
-  { title: "Doenças raras oncológicas", desc: "Tipos de câncer com baixa incidência na população geral." },
+  { title: "Neurológicas e neuromusculares", desc: "Incluem condições como CLN2, atrofia muscular espinhal (AME) e esclerose lateral amiotrófica (ELA)." },
+  { title: "Metabólicas e genéticas", desc: "Incluem fibrose cística, fenilcetonúria, doença de Gaucher e mucopolissacaridoses." },
+  { title: "Sangue e coagulação", desc: "Incluem hemofilias e outras alterações hereditárias raras da coagulação e do sangue." },
+  { title: "Imunológicas e autoimunes", desc: "Incluem imunodeficiências primárias e condições autoimunes raras, com manifestações variadas." },
 ];
 
 const warningSigns = [
@@ -96,8 +96,8 @@ function OtherRareDiseasesPage() {
         <div className="site-container section-space">
           <SectionTitle
             eyebrow="Panorama"
-            title="Grupos de doenças raras mais recorrentes"
-            description="Não existe um ranking oficial fechado; a apresentação abaixo é apenas ilustrativa dos grandes grupos reconhecidos pelo Ministério da Saúde e pela literatura científica, sem indicar frequência exata de cada condição."
+            title="Doenças e grupos mais conhecidos"
+            description="Não há um ranking nacional único e fechado das doenças raras mais recorrentes. Os exemplos abaixo ajudam a reconhecer grupos frequentemente citados em políticas públicas e serviços especializados, sem indicar que sejam os mais frequentes em toda região."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {groups.map((g) => (
@@ -205,9 +205,9 @@ function OtherRareDiseasesPage() {
             <p>
               Direitos como BPC, isenções e prioridade de atendimento dependem de critérios legais e avaliação
               individual. Consulte a página{" "}
-              <a className="underline" href="/direitos-e-orientacao">
+              <Link className="underline" to="/direitos-e-orientacao">
                 Direitos e orientação
-              </a>{" "}
+              </Link>{" "}
               do Instituto.
             </p>
           </InfoCard>
