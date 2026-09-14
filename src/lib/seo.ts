@@ -1,4 +1,5 @@
 export function pageHead(title: string, description: string, path: string) {
+  const url = `https://institutofrancisquinho.lovable.app${path}`;
   return {
     meta: [
       { title },
@@ -6,9 +7,9 @@ export function pageHead(title: string, description: string, path: string) {
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: path },
+      { property: "og:url", content: url },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: path }],
+    links: [{ rel: "canonical", href: url }],
   };
 }
