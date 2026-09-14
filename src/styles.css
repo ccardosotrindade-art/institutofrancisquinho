@@ -167,10 +167,8 @@
 
 @layer components {
   .logo-lockup {
-    border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
     border-radius: var(--radius);
-    background: color-mix(in oklab, var(--background) 92%, var(--secondary));
-    box-shadow: 0 8px 24px color-mix(in oklab, var(--primary) 7%, transparent);
+    background: var(--background);
     overflow: hidden;
   }
 
@@ -270,10 +268,10 @@
 
 @media (max-width: 47.99rem) {
   .hero-scrim {
-    background: linear-gradient(90deg, color-mix(in oklab, var(--background) 97%, transparent) 0%, color-mix(in oklab, var(--background) 87%, transparent) 64%, color-mix(in oklab, var(--background) 58%, transparent) 100%);
+    background: linear-gradient(90deg, color-mix(in oklab, var(--background) 98%, transparent) 0%, color-mix(in oklab, var(--background) 94%, transparent) 70%, color-mix(in oklab, var(--background) 78%, transparent) 100%);
   }
 
-  .hero-slide-image { object-position: 62% center; }
+  .hero-slide-image { object-position: 68% center; }
   .floating-help { bottom: .75rem; right: .75rem; }
 }
 

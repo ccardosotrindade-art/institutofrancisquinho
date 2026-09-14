@@ -15,7 +15,7 @@ import {
   Users,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import logoAsset from "@/assets/instituto-logo.jpeg.asset.json";
+import logoAsset from "@/assets/instituto-logo-integrado.png.asset.json";
 import francisquinhoAsset from "@/assets/francisquinho.jpeg.asset.json";
 import heroOrientacao from "@/assets/hero-orientacao.jpg";
 import { Button } from "@/components/ui/button";
