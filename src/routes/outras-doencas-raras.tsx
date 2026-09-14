@@ -248,7 +248,7 @@ function OtherRareDiseasesPage() {
           <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
             <Search className="size-4 shrink-0" aria-hidden="true" />
             Conteúdo revisado com base em fontes oficiais brasileiras e internacionais reconhecidas. Última consulta:
-            fevereiro de 2026.
+            setembro de 2026.
           </p>
         </div>
       </section>

@@ -8,7 +8,7 @@
 - [x] Add accessible hero carousel and richer illustration system
 - [x] Expose horizontal one-click navigation and integrate logo treatment
 - [x] Add floating “Como ajudar” action and validate responsive behavior
-- [ ] Merge diagnosis, care, and treatment into one page
-- [ ] Add the “Outras Doenças Raras” page with verified information
+- [x] Merge diagnosis, care, and treatment into one page
+- [x] Add the “Outras Doenças Raras” page with verified information
 - [x] Publish the complete institutional story provided by the family
-- [ ] Validate redirects, navigation, accessibility, and responsive layouts
+- [x] Validate redirects, navigation, accessibility, and responsive layouts
