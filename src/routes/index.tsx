@@ -36,7 +36,7 @@ function HeroCarousel() {
     return () => window.clearInterval(timer);
   }, [playing]);
   const goTo = (index: number) => { setActive((index + heroSlides.length) % heroSlides.length); setPlaying(false); };
-  const slide = heroSlides[active];
+  const slide = heroSlides[active] ?? heroSlides[0];
   return <section className="hero-carousel" aria-roledescription="carrossel" aria-label="Destaques do Instituto">
     <div className="absolute inset-0">
       {heroSlides.map((item, index) => <img key={item.title} src={item.image} alt={index === active ? item.alt : ""} width={1600} height={1008} fetchPriority={index === 0 ? "high" : "auto"} className={`hero-slide-image ${index === active ? "is-active" : ""}`} aria-hidden={index !== active}/>) }

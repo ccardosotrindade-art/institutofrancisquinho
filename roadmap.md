@@ -5,6 +5,6 @@
 - [x] Build all six institutional pages and metadata
 - [x] Add validated contact and volunteer forms
 - [x] Verify navigation, accessibility, responsiveness, and contact links
-- [ ] Add accessible hero carousel and richer illustration system
-- [ ] Expose horizontal one-click navigation and integrate logo treatment
-- [ ] Add floating “Como ajudar” action and validate responsive behavior
+- [x] Add accessible hero carousel and richer illustration system
+- [x] Expose horizontal one-click navigation and integrate logo treatment
+- [x] Add floating “Como ajudar” action and validate responsive behavior
