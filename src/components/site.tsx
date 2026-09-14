@@ -32,6 +32,7 @@ const navItems = [
   { label: "Home", to: "/" as const },
   { label: "Recebi o Diagnóstico", to: "/recebi-o-diagnostico" as const },
   { label: "Cuidados e Tratamento", to: "/cuidados-e-tratamento" as const },
+  { label: "Outras Doenças Raras", to: "/outras-doencas-raras" as const },
   { label: "Direitos e Orientação", to: "/direitos-e-orientacao" as const },
   { label: "Quem Somos", to: "/quem-somos" as const },
   { label: "Como Ajudar", to: "/como-ajudar" as const },
