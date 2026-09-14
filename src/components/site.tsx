@@ -10,7 +10,6 @@ import {
   HeartHandshake,
   Mail,
   MapPin,
-  Menu,
   MessageCircle,
   Phone,
   ShieldCheck,
@@ -19,19 +18,11 @@ import {
 import type { LucideIcon } from "lucide-react";
 import logoAsset from "@/assets/instituto-logo.jpeg.asset.json";
 import francisquinhoAsset from "@/assets/francisquinho.jpeg.asset.json";
+import heroOrientacao from "@/assets/hero-orientacao.jpg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 
 export const WHATSAPP_URL =
   "https://wa.me/5591992383294?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Instituto%20Francisquinho%20e%20receber%20orienta%C3%A7%C3%A3o.";
@@ -49,61 +40,33 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/95 backdrop-blur">
-      <div className="site-container grid min-h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 xl:min-h-24 xl:grid-cols-[auto_minmax(0,1fr)_auto]">
-        <Link to="/" aria-label="Instituto Francisquinho — página inicial" className="w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-          <img src={logoAsset.url} alt="Instituto Francisquinho" className="h-14 w-auto object-contain xl:h-16" />
+    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/95 shadow-sm backdrop-blur">
+      <div className="site-container flex min-h-20 items-center justify-between gap-4 py-2">
+        <Link to="/" aria-label="Instituto Francisquinho — página inicial" className="logo-lockup w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <img src={logoAsset.url} alt="Instituto Francisquinho" className="h-14 w-auto object-contain mix-blend-multiply md:h-16" />
         </Link>
-        <nav aria-label="Navegação principal" className="hidden justify-center xl:flex">
-          <ul className="flex items-center gap-1">
-            {navItems.map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  preload="intent"
-                  activeOptions={{ exact: item.to === "/" }}
-                  className="inline-flex min-h-11 items-center rounded-md px-3 text-sm font-bold text-muted-foreground transition-colors hover:bg-secondary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  activeProps={{ className: "bg-secondary text-primary" }}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className="hidden items-center gap-2 xl:flex">
-          <Button asChild variant="outline"><Link to="/recebi-o-diagnostico">Preciso de orientação</Link></Button>
-          <Button asChild variant="accent"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer">Fale conosco</a></Button>
+        <div className="flex items-center gap-2">
+          <Button asChild variant="outline" className="hidden md:inline-flex"><Link to="/recebi-o-diagnostico">Preciso de orientação</Link></Button>
+          <Button asChild variant="accent"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle /><span className="hidden sm:inline">Fale conosco</span></a></Button>
         </div>
-        <Sheet>
-          <SheetTrigger asChild className="xl:hidden">
-            <Button variant="outline" size="icon" aria-label="Abrir menu"><Menu /></Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-11/12 max-w-sm">
-            <SheetHeader className="pr-8 text-left">
-              <SheetTitle>Instituto Francisquinho</SheetTitle>
-              <SheetDescription>Informação, acolhimento e apoio.</SheetDescription>
-            </SheetHeader>
-            <nav aria-label="Navegação móvel" className="mt-8">
-              <ul className="space-y-1">
-                {navItems.map((item) => (
-                  <li key={item.to}>
-                    <SheetClose asChild>
-                      <Link to={item.to} className="flex min-h-12 items-center justify-between rounded-md px-3 font-bold text-primary hover:bg-secondary">
-                        {item.label}<ChevronRight aria-hidden="true" className="size-4" />
-                      </Link>
-                    </SheetClose>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 grid gap-3">
-                <SheetClose asChild><Button asChild variant="outline"><Link to="/recebi-o-diagnostico">Preciso de orientação</Link></Button></SheetClose>
-                <Button asChild variant="accent"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer">Fale conosco</a></Button>
-              </div>
-            </nav>
-          </SheetContent>
-        </Sheet>
       </div>
+      <nav aria-label="Navegação principal" className="border-t border-border/70 bg-surface-soft/80">
+        <ul className="site-container flex items-stretch overflow-x-auto py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {navItems.map((item) => (
+            <li key={item.to} className="shrink-0">
+              <Link
+                to={item.to}
+                preload="intent"
+                activeOptions={{ exact: item.to === "/" }}
+                className="inline-flex min-h-11 items-center rounded-md px-3 text-xs font-black text-muted-foreground transition-colors hover:bg-background hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:px-4 md:text-sm"
+                activeProps={{ className: "bg-background text-primary shadow-sm" }}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }
@@ -119,8 +82,8 @@ export function SiteFooter() {
       <div className="site-container py-14">
         <div className="grid gap-10 lg:grid-cols-[1.15fr_2fr]">
           <div>
-            <div className="inline-flex rounded-md bg-background p-3">
-              <img src={logoAsset.url} alt="Instituto Francisquinho" className="h-20 w-auto object-contain" />
+            <div className="logo-lockup inline-flex p-3">
+              <img src={logoAsset.url} alt="Instituto Francisquinho" className="h-20 w-auto object-contain mix-blend-multiply" />
             </div>
             <p className="mt-5 max-w-sm text-sm leading-6 text-primary-foreground/80">Associação Norte de CLN2 e Outras Doenças Raras. Informação e acolhimento para famílias.</p>
           </div>
@@ -155,10 +118,15 @@ export function SiteFooter() {
 export function PageHero({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
     <section className="page-hero">
-      <div className="site-container py-14 md:py-20">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-primary md:text-5xl">{title}</h1>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">{description}</p>
+      <div className="site-container grid min-h-[25rem] items-center gap-8 py-12 md:grid-cols-[1.05fr_.95fr] md:py-16">
+        <div className="relative z-10 animate-fade-in">
+          <p className="eyebrow">{eyebrow}</p>
+          <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-primary md:text-5xl">{title}</h1>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">{description}</p>
+        </div>
+        <div className="hero-illustration-wrap hidden md:block" aria-hidden="true">
+          <img src={heroOrientacao} alt="" width={1600} height={1008} className="h-full w-full object-cover object-right" />
+        </div>
       </div>
     </section>
   );
