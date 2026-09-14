@@ -4,7 +4,6 @@ import { ArrowLeft, ArrowRight, BookOpenCheck, HeartHandshake, Info, Pause, Play
 import { AlertBanner, ContactDetails, InfoCard, SectionTitle, SimpleForm, commonIcons } from "@/components/site";
 import { Button } from "@/components/ui/button";
 import { pageHead } from "@/lib/seo";
-import heroAcolhimento from "@/assets/hero-acolhimento.jpg";
 import heroOrientacao from "@/assets/hero-orientacao.jpg";
 import heroComunidade from "@/assets/hero-comunidade.jpg";
 import heroFrancisquinho from "@/assets/hero-francisquinho.jpg";
