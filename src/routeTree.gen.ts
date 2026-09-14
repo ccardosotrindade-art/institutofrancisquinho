@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComoAjudarRouteImport } from './routes/como-ajudar'
+import { Route as CuidadosETratamentoRouteImport } from './routes/cuidados-e-tratamento'
+import { Route as DireitosEOrientacaoRouteImport } from './routes/direitos-e-orientacao'
+import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as RecebiODiagnosticoRouteImport } from './routes/recebi-o-diagnostico'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComoAjudarRoute = ComoAjudarRouteImport.update({
+  id: '/como-ajudar',
+  path: '/como-ajudar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CuidadosETratamentoRoute = CuidadosETratamentoRouteImport.update({
+  id: '/cuidados-e-tratamento',
+  path: '/cuidados-e-tratamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DireitosEOrientacaoRoute = DireitosEOrientacaoRouteImport.update({
+  id: '/direitos-e-orientacao',
+  path: '/direitos-e-orientacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemSomosRoute = QuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecebiODiagnosticoRoute = RecebiODiagnosticoRouteImport.update({
+  id: '/recebi-o-diagnostico',
+  path: '/recebi-o-diagnostico',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/como-ajudar': typeof ComoAjudarRoute
+  '/cuidados-e-tratamento': typeof CuidadosETratamentoRoute
+  '/direitos-e-orientacao': typeof DireitosEOrientacaoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/recebi-o-diagnostico': typeof RecebiODiagnosticoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/como-ajudar': typeof ComoAjudarRoute
+  '/cuidados-e-tratamento': typeof CuidadosETratamentoRoute
+  '/direitos-e-orientacao': typeof DireitosEOrientacaoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/recebi-o-diagnostico': typeof RecebiODiagnosticoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/como-ajudar': typeof ComoAjudarRoute
+  '/cuidados-e-tratamento': typeof CuidadosETratamentoRoute
+  '/direitos-e-orientacao': typeof DireitosEOrientacaoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/recebi-o-diagnostico': typeof RecebiODiagnosticoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/como-ajudar'
+    | '/cuidados-e-tratamento'
+    | '/direitos-e-orientacao'
+    | '/quem-somos'
+    | '/recebi-o-diagnostico'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/como-ajudar'
+    | '/cuidados-e-tratamento'
+    | '/direitos-e-orientacao'
+    | '/quem-somos'
+    | '/recebi-o-diagnostico'
+  id:
+    | '__root__'
+    | '/'
+    | '/como-ajudar'
+    | '/cuidados-e-tratamento'
+    | '/direitos-e-orientacao'
+    | '/quem-somos'
+    | '/recebi-o-diagnostico'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComoAjudarRoute: typeof ComoAjudarRoute
+  CuidadosETratamentoRoute: typeof CuidadosETratamentoRoute
+  DireitosEOrientacaoRoute: typeof DireitosEOrientacaoRoute
+  QuemSomosRoute: typeof QuemSomosRoute
+  RecebiODiagnosticoRoute: typeof RecebiODiagnosticoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-ajudar': {
+      id: '/como-ajudar'
+      path: '/como-ajudar'
+      fullPath: '/como-ajudar'
+      preLoaderRoute: typeof ComoAjudarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cuidados-e-tratamento': {
+      id: '/cuidados-e-tratamento'
+      path: '/cuidados-e-tratamento'
+      fullPath: '/cuidados-e-tratamento'
+      preLoaderRoute: typeof CuidadosETratamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/direitos-e-orientacao': {
+      id: '/direitos-e-orientacao'
+      path: '/direitos-e-orientacao'
+      fullPath: '/direitos-e-orientacao'
+      preLoaderRoute: typeof DireitosEOrientacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-somos': {
+      id: '/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/quem-somos'
+      preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recebi-o-diagnostico': {
+      id: '/recebi-o-diagnostico'
+      path: '/recebi-o-diagnostico'
+      fullPath: '/recebi-o-diagnostico'
+      preLoaderRoute: typeof RecebiODiagnosticoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComoAjudarRoute: ComoAjudarRoute,
+  CuidadosETratamentoRoute: CuidadosETratamentoRoute,
+  DireitosEOrientacaoRoute: DireitosEOrientacaoRoute,
+  QuemSomosRoute: QuemSomosRoute,
+  RecebiODiagnosticoRoute: RecebiODiagnosticoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
