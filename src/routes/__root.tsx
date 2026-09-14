@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { HeartHandshake } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site";
 import { Button } from "@/components/ui/button";
 
@@ -91,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
@@ -111,6 +112,9 @@ function RootComponent() {
       <a href="#conteudo-principal" className="skip-link">Ir para o conteúdo principal</a>
       <SiteHeader />
       <main id="conteudo-principal"><Outlet /></main>
+      <Button asChild variant="accent" size="lg" className="floating-help shadow-lg">
+        <Link to="/como-ajudar" aria-label="Como ajudar o Instituto Francisquinho"><HeartHandshake />Como ajudar</Link>
+      </Button>
       <SiteFooter />
     </QueryClientProvider>
   );
