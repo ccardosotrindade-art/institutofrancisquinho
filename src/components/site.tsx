@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState, type FormEvent, type LucideIcon } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import {
   ArrowRight,
   CalendarDays,
@@ -16,6 +16,7 @@ import {
   ShieldCheck,
   Users,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import logoAsset from "@/assets/instituto-logo.jpeg.asset.json";
 import francisquinhoAsset from "@/assets/francisquinho.jpeg.asset.json";
 import { Button } from "@/components/ui/button";
@@ -109,9 +110,9 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   const groups = [
-    { title: "Instituto", links: [["Sobre o Instituto", "/quem-somos"], ["Nossa missão", "/quem-somos"], ["Equipe gestora", "/quem-somos"], ["Transparência", "/quem-somos"]] },
-    { title: "Informação e orientação", links: [["Recebi o diagnóstico", "/recebi-o-diagnostico"], ["Cuidados e tratamento", "/cuidados-e-tratamento"], ["Direitos e orientação", "/direitos-e-orientacao"]] },
-    { title: "Como ajudar", links: [["Doações", "/como-ajudar"], ["Voluntariado", "/como-ajudar"], ["Campanhas e eventos", "/como-ajudar"]] },
+    { title: "Instituto", links: [{ label: "Sobre o Instituto", to: "/quem-somos" as const }, { label: "Nossa missão", to: "/quem-somos" as const }, { label: "Equipe gestora", to: "/quem-somos" as const }, { label: "Transparência", to: "/quem-somos" as const }] },
+    { title: "Informação e orientação", links: [{ label: "Recebi o diagnóstico", to: "/recebi-o-diagnostico" as const }, { label: "Cuidados e tratamento", to: "/cuidados-e-tratamento" as const }, { label: "Direitos e orientação", to: "/direitos-e-orientacao" as const }] },
+    { title: "Como ajudar", links: [{ label: "Doações", to: "/como-ajudar" as const }, { label: "Voluntariado", to: "/como-ajudar" as const }, { label: "Campanhas e eventos", to: "/como-ajudar" as const }] },
   ];
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -128,7 +129,7 @@ export function SiteFooter() {
               <div key={group.title}>
                 <h2 className="text-sm font-black uppercase">{group.title}</h2>
                 <ul className="mt-4 space-y-3 text-sm text-primary-foreground/80">
-                  {group.links.map(([label, to]) => <li key={label}><Link to={to} className="hover:text-primary-foreground hover:underline">{label}</Link></li>)}
+                  {group.links.map((link) => <li key={link.label}><Link to={link.to} className="hover:text-primary-foreground hover:underline">{link.label}</Link></li>)}
                 </ul>
               </div>
             ))}
@@ -167,11 +168,11 @@ export function SectionTitle({ eyebrow, title, description }: { eyebrow?: string
   return <div className="max-w-3xl">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h2 className="mt-2 text-3xl font-black leading-tight text-primary md:text-4xl">{title}</h2>{description && <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">{description}</p>}</div>;
 }
 
-export function InfoCard({ icon: Icon, title, children }: { icon: LucideIcon; title: string; children: React.ReactNode }) {
+export function InfoCard({ icon: Icon, title, children }: { icon: LucideIcon; title: string; children: ReactNode }) {
   return <article className="info-card"><div className="icon-tile"><Icon aria-hidden="true" /></div><h3 className="mt-5 text-xl font-black text-primary">{title}</h3><div className="mt-3 leading-7 text-muted-foreground">{children}</div></article>;
 }
 
-export function AlertBanner({ title, children }: { title: string; children: React.ReactNode }) {
+export function AlertBanner({ title, children }: { title: string; children: ReactNode }) {
   return <aside className="border-l-4 border-accent-strong bg-secondary px-5 py-6 md:px-8"><div className="flex gap-4"><CircleAlert className="mt-1 size-6 shrink-0 text-accent-strong" aria-hidden="true" /><div><h2 className="text-xl font-black text-primary">{title}</h2><div className="mt-2 leading-7 text-muted-foreground">{children}</div></div></div></aside>;
 }
 
@@ -201,6 +202,6 @@ export function SimpleForm({ kind }: { kind: "contato" | "voluntariado" }) {
   </form>;
 }
 
-function Field({ id, label, children }: { id: string; label: string; children: React.ReactNode }) { return <div className="grid gap-2"><Label htmlFor={id}>{label}</Label>{children}</div>; }
+function Field({ id, label, children }: { id: string; label: string; children: ReactNode }) { return <div className="grid gap-2"><Label htmlFor={id}>{label}</Label>{children}</div>; }
 
 export const commonIcons = { Dna, HeartHandshake, ShieldCheck, Users, CalendarDays };
