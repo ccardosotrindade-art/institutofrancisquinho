@@ -31,7 +31,7 @@ export { francisquinhoAsset };
 const navItems = [
   { label: "Home", to: "/" as const },
   { label: "Recebi o Diagnóstico", to: "/recebi-o-diagnostico" as const },
-  { label: "Cuidados e Tratamento", to: "/cuidados-e-tratamento" as const },
+  { label: "Outras Doenças Raras", to: "/outras-doencas-raras" as const },
   { label: "Outras Doenças Raras", to: "/outras-doencas-raras" as const },
   { label: "Direitos e Orientação", to: "/direitos-e-orientacao" as const },
   { label: "Quem Somos", to: "/quem-somos" as const },
@@ -74,7 +74,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   const groups = [
     { title: "Instituto", links: [{ label: "Sobre o Instituto", to: "/quem-somos" as const }, { label: "Nossa missão", to: "/quem-somos" as const }, { label: "Equipe gestora", to: "/quem-somos" as const }, { label: "Transparência", to: "/quem-somos" as const }] },
-    { title: "Informação e orientação", links: [{ label: "Recebi o diagnóstico", to: "/recebi-o-diagnostico" as const }, { label: "Cuidados e tratamento", to: "/cuidados-e-tratamento" as const }, { label: "Direitos e orientação", to: "/direitos-e-orientacao" as const }] },
+    { title: "Informação e orientação", links: [{ label: "Diagnóstico, cuidados e tratamento", to: "/recebi-o-diagnostico" as const }, { label: "Outras doenças raras", to: "/outras-doencas-raras" as const }, { label: "Direitos e orientação", to: "/direitos-e-orientacao" as const }] },
     { title: "Como ajudar", links: [{ label: "Doações", to: "/como-ajudar" as const }, { label: "Voluntariado", to: "/como-ajudar" as const }, { label: "Campanhas e eventos", to: "/como-ajudar" as const }] },
   ];
   return (
