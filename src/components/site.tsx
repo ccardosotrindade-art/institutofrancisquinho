@@ -79,7 +79,7 @@ export function SiteHeader() {
           <SheetTrigger asChild className="xl:hidden">
             <Button variant="outline" size="icon" aria-label="Abrir menu"><Menu /></Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[min(88vw,24rem)]">
+          <SheetContent side="right" className="w-11/12 max-w-sm">
             <SheetHeader className="pr-8 text-left">
               <SheetTitle>Instituto Francisquinho</SheetTitle>
               <SheetDescription>Informação, acolhimento e apoio.</SheetDescription>
