@@ -1,24 +1,34 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, BookOpenCheck, HeartHandshake, Info, Scale, ShieldCheck, Stethoscope, Users } from "lucide-react";
+import { AlertBanner, ContactDetails, InfoCard, SectionTitle, SimpleForm, commonIcons, francisquinhoAsset } from "@/components/site";
+import { Button } from "@/components/ui/button";
+import { pageHead } from "@/lib/seo";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => pageHead("Instituto Francisquinho | Apoio às famílias com CLN2", "Informação, acolhimento e apoio para famílias que enfrentam CLN2 e outras doenças raras no Pará.", "/"),
+  component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+const helpCards = [
+  [Info, "Informação", "Conheça a CLN2 e outras doenças raras em linguagem acessível."],
+  [BookOpenCheck, "Orientação", "Entenda possíveis próximos passos após um diagnóstico."],
+  [HeartHandshake, "Acolhimento", "Encontre uma rede de apoio, escuta e informação."],
+  [Scale, "Direitos", "Acesse introduções sobre medicamentos, benefícios e documentos."],
+] as const;
+const careCards = [[Stethoscope,"Tratamento e acompanhamento"],[Users,"Equipe multidisciplinar"],[ShieldCheck,"Rotina e adaptações"],[HeartHandshake,"Apoio à família"]] as const;
+
+function HomePage() { return <>
+  <section className="overflow-hidden bg-background">
+    <div className="site-container grid min-h-[calc(100dvh-6rem)] items-center gap-10 py-12 md:min-h-[44rem] lg:grid-cols-[1.15fr_.85fr] lg:py-16">
+      <div><p className="eyebrow">Informação, acolhimento e apoio</p><h1 className="mt-4 max-w-3xl text-4xl font-black leading-[1.08] text-primary sm:text-5xl lg:text-6xl">Você não precisa enfrentar uma doença rara sozinho.</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">O Instituto Francisquinho acolhe, informa e orienta famílias que convivem com a CLN2 e outras doenças raras, ajudando a encontrar caminhos de cuidado, apoio e informação.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><Button asChild variant="accent" size="lg"><Link to="/recebi-o-diagnostico">Recebi um diagnóstico<ArrowRight /></Link></Button><Button asChild variant="outline" size="lg"><Link to="/quem-somos">Conheça o Instituto</Link></Button></div><p className="mt-8 border-l-4 border-accent-strong pl-4 text-sm font-bold text-primary">Informação clara. Acolhimento humano. Apoio para cada etapa.</p></div>
+      <div className="relative mx-auto w-full max-w-lg"><div className="absolute inset-x-8 bottom-2 h-12 rounded-full bg-primary/10 blur-xl" aria-hidden="true"/><img src={francisquinhoAsset.url} alt="Ilustração do Francisquinho sorrindo em sua cadeira de rodas" className="relative aspect-square w-full object-cover object-top"/></div>
     </div>
-  );
-}
+  </section>
+  <div className="site-container py-10"><AlertBanner title="Recebi um diagnóstico. E agora?"><p>Encontrar informações confiáveis e saber por onde começar pode fazer diferença. Reunimos orientações iniciais para ajudar você e sua família.</p><Button asChild variant="outline" className="mt-4"><Link to="/recebi-o-diagnostico">Ver primeiros passos</Link></Button></AlertBanner></div>
+  <section className="site-container section-space"><SectionTitle eyebrow="Apoio em cada etapa" title="Como podemos ajudar?"/><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{helpCards.map(([icon,title,text])=><InfoCard key={title} icon={icon} title={title}><p>{text}</p></InfoCard>)}</div></section>
+  <section className="bg-primary text-primary-foreground"><div className="site-container section-space grid items-center gap-12 lg:grid-cols-[1fr_auto]"><div><p className="text-sm font-black uppercase text-primary-foreground/70">Conheça a CLN2</p><h2 className="mt-3 max-w-3xl text-3xl font-black md:text-4xl">Entender é o primeiro passo para cuidar.</h2><p className="mt-5 max-w-3xl leading-7 text-primary-foreground/80">A CLN2 é uma doença rara que pode trazer desafios importantes para a criança e sua família. Informação confiável, acompanhamento especializado e uma rede de apoio são fundamentais.</p><p className="mt-4 text-xs text-primary-foreground/70">Conteúdo informativo; não substitui avaliação ou orientação profissional.</p></div><Button asChild variant="accent" size="lg"><Link to="/recebi-o-diagnostico">Saiba mais sobre a CLN2</Link></Button></div></section>
+  <section className="site-container section-space"><SectionTitle eyebrow="Cuidado integral" title="Cuidados e tratamento" description="O acompanhamento pode reunir diferentes frentes, sempre conforme orientação da equipe responsável."/><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{careCards.map(([icon,title])=><InfoCard key={title} icon={icon} title={title}><p>Informações introdutórias para apoiar o diálogo com profissionais de saúde.</p></InfoCard>)}</div><Button asChild variant="outline" className="mt-8"><Link to="/cuidados-e-tratamento">Conheça os cuidados e tratamentos<ArrowRight /></Link></Button></section>
+  <section className="bg-surface-soft"><div className="site-container section-space grid gap-12 lg:grid-cols-2"><div><SectionTitle eyebrow="Informação prática" title="Direitos e orientação" description="Encontre um ponto de partida para organizar sua busca por apoio."/><ul className="mt-7 grid gap-3 sm:grid-cols-2">{["Como buscar medicamentos","Benefícios sociais","BPC","Isenções, quando aplicáveis","Documentos e modelos de apoio"].map(x=><li key={x} className="flex items-center gap-3 font-bold text-primary"><span className="size-2 rounded-full bg-accent-strong" aria-hidden="true"/>{x}</li>)}</ul><Button asChild variant="accent" className="mt-8"><Link to="/direitos-e-orientacao">Conheça seus direitos</Link></Button></div><div className="border border-border bg-background p-7"><commonIcons.Dna className="size-10 text-accent-strong"/><h2 className="mt-5 text-2xl font-black text-primary">Quem somos</h2><p className="mt-4 leading-7 text-muted-foreground">O Instituto Francisquinho atua para fortalecer o acolhimento, a informação e o apoio às famílias que convivem com doenças raras.</p><Button asChild variant="outline" className="mt-6"><Link to="/quem-somos">Conheça nossa história</Link></Button></div></div></section>
+  <section className="site-container section-space"><SectionTitle eyebrow="Faça parte" title="Juntos, podemos ampliar o apoio às famílias."/><div className="mt-10 grid gap-5 md:grid-cols-3"><InfoCard icon={HeartHandshake} title="Faça uma doação"><p>Canais de contribuição serão divulgados após validação.</p></InfoCard><InfoCard icon={Users} title="Seja voluntário"><p>Compartilhe seu tempo e suas habilidades.</p></InfoCard><InfoCard icon={commonIcons.CalendarDays} title="Campanhas e eventos"><p>Acompanhe futuras mobilizações do Instituto.</p></InfoCard></div><Button asChild variant="accent" className="mt-8"><Link to="/como-ajudar">Veja como ajudar</Link></Button></section>
+  <section className="bg-surface-soft"><div className="site-container section-space grid gap-12 lg:grid-cols-[.8fr_1.2fr]"><div><SectionTitle eyebrow="Contato" title="Fale com o Instituto Francisquinho" description="Nossa equipe está disponível nos canais abaixo para ouvir e orientar."/><div className="mt-8"><ContactDetails /></div></div><div className="border border-border bg-background p-6 md:p-8"><SimpleForm kind="contato"/></div></div></section>
+</>; }
