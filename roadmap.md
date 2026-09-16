@@ -12,3 +12,5 @@
 - [x] Add the “Outras Doenças Raras” page with verified information
 - [x] Publish the complete institutional story provided by the family
 - [x] Validate redirects, navigation, accessibility, and responsive layouts
+- [x] Retouch the supplied portrait with a natural institutional background
+- [x] Add the portrait to the “Equipe gestora” section and verify the page
