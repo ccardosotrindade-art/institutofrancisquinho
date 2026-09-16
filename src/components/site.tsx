@@ -126,7 +126,7 @@ export function PageHero({ eyebrow, title, description, artworks }: { eyebrow: s
     const timer = window.setInterval(() => setActive((current) => (current + 1) % images.length), 7000);
     return () => window.clearInterval(timer);
   }, [images.length]);
-  const current = images[active] ?? images[0];
+  const current = images[active] ?? images[0] ?? { src: heroOrientacao, alt: "" };
   return (
     <section className="page-hero">
       <div className="site-container grid min-h-[25rem] items-center gap-8 py-12 md:grid-cols-[1.05fr_.95fr] md:py-16">

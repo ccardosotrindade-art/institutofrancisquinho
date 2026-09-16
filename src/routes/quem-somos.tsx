@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Compass, Eye, HeartHandshake } from "lucide-react";
 import equipeGestora from "@/assets/equipe-gestora-casal.jpg";
+import historiaMissao from "@/assets/historia-missao-instituto.jpeg.asset.json";
 import { EmptyState, InfoCard, PageHero, SectionTitle, francisquinhoAsset } from "@/components/site";
 import { pageHead } from "@/lib/seo";
 
