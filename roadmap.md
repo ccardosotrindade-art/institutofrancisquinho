@@ -15,4 +15,4 @@
 - [x] Retouch the supplied portrait with a natural institutional background
 - [x] Add the portrait to the “Equipe gestora” section and verify the page
 - [x] Add the five supplied information artworks to contextual page carousels
-- [ ] Verify carousel controls, readability, and mobile presentation
+- [x] Verify carousel controls, readability, and mobile presentation

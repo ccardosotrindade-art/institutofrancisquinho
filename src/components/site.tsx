@@ -137,7 +137,7 @@ export function PageHero({ eyebrow, title, description, artworks }: { eyebrow: s
         </div>
         <div className="hero-artwork-carousel relative z-10" aria-roledescription={images.length > 1 ? "carrossel" : undefined} aria-label={images.length > 1 ? "Artes informativas" : undefined}>
           <img src={current.src} alt={current.alt} className="h-full w-full object-contain" />
-          {images.length > 1 && <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-3">
+          {images.length > 1 && <div className="absolute inset-x-3 top-3 flex items-center justify-between gap-3">
             <Button type="button" variant="outline" size="icon" aria-label="Arte anterior" onClick={() => setActive((active - 1 + images.length) % images.length)}><ChevronLeft /></Button>
             <div className="flex gap-2 rounded-full bg-background/90 px-3 py-2" aria-label={`Arte ${active + 1} de ${images.length}`}>
               {images.map((image, index) => <button key={image.src} type="button" aria-label={`Mostrar arte ${index + 1}`} aria-current={index === active} onClick={() => setActive(index)} className={`carousel-dot ${index === active ? "is-active" : ""}`} />)}
