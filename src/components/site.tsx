@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import {
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   CalendarDays,
   CircleAlert,
   Dna,
@@ -114,7 +116,17 @@ export function SiteFooter() {
   );
 }
 
-export function PageHero({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
+type HeroArtwork = { src: string; alt: string };
+
+export function PageHero({ eyebrow, title, description, artworks }: { eyebrow: string; title: string; description: string; artworks?: readonly HeroArtwork[] }) {
+  const images = artworks?.length ? artworks : [{ src: heroOrientacao, alt: "" }];
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    if (images.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => setActive((current) => (current + 1) % images.length), 7000);
+    return () => window.clearInterval(timer);
+  }, [images.length]);
+  const current = images[active] ?? images[0];
   return (
     <section className="page-hero">
       <div className="site-container grid min-h-[25rem] items-center gap-8 py-12 md:grid-cols-[1.05fr_.95fr] md:py-16">
@@ -123,8 +135,15 @@ export function PageHero({ eyebrow, title, description }: { eyebrow: string; tit
           <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-primary md:text-5xl">{title}</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">{description}</p>
         </div>
-        <div className="hero-illustration-wrap hidden md:block" aria-hidden="true">
-          <img src={heroOrientacao} alt="" width={1600} height={1008} className="h-full w-full object-cover object-right" />
+        <div className="hero-artwork-carousel relative z-10" aria-roledescription={images.length > 1 ? "carrossel" : undefined} aria-label={images.length > 1 ? "Artes informativas" : undefined}>
+          <img src={current.src} alt={current.alt} className="h-full w-full object-contain" />
+          {images.length > 1 && <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-3">
+            <Button type="button" variant="outline" size="icon" aria-label="Arte anterior" onClick={() => setActive((active - 1 + images.length) % images.length)}><ChevronLeft /></Button>
+            <div className="flex gap-2 rounded-full bg-background/90 px-3 py-2" aria-label={`Arte ${active + 1} de ${images.length}`}>
+              {images.map((image, index) => <button key={image.src} type="button" aria-label={`Mostrar arte ${index + 1}`} aria-current={index === active} onClick={() => setActive(index)} className={`carousel-dot ${index === active ? "is-active" : ""}`} />)}
+            </div>
+            <Button type="button" variant="outline" size="icon" aria-label="Próxima arte" onClick={() => setActive((active + 1) % images.length)}><ChevronRight /></Button>
+          </div>}
         </div>
       </div>
     </section>

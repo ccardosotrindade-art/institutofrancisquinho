@@ -227,6 +227,16 @@
     animation: gentle-float 7s ease-in-out infinite;
   }
 
+  .hero-artwork-carousel {
+    height: min(34rem, 68vh);
+    min-height: 24rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--background);
+    box-shadow: 0 18px 48px color-mix(in oklab, var(--primary) 14%, transparent);
+  }
+
   .page-hero::before {
     content: "";
     position: absolute;
@@ -273,6 +283,7 @@
 
   .hero-slide-image { object-position: 68% center; }
   .floating-help { bottom: .75rem; right: .75rem; }
+  .hero-artwork-carousel { height: auto; min-height: 0; aspect-ratio: 1 / 1; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
