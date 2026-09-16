@@ -118,7 +118,7 @@ export function SiteFooter() {
 
 type HeroArtwork = { src: string; alt: string };
 
-export function PageHero({ eyebrow, title, description, artworks }: { eyebrow: string; title: string; description: string; artworks?: readonly HeroArtwork[] }) {
+export function PageHero({ eyebrow, title, description, artworks, withoutArtwork = false }: { eyebrow: string; title: string; description: string; artworks?: readonly HeroArtwork[]; withoutArtwork?: boolean }) {
   const images = artworks?.length ? artworks : [{ src: heroOrientacao, alt: "" }];
   const [active, setActive] = useState(0);
   useEffect(() => {
@@ -129,13 +129,13 @@ export function PageHero({ eyebrow, title, description, artworks }: { eyebrow: s
   const current = images[active] ?? images[0] ?? { src: heroOrientacao, alt: "" };
   return (
     <section className="page-hero">
-      <div className="site-container grid min-h-[25rem] items-center gap-8 py-12 md:grid-cols-[1.05fr_.95fr] md:py-16">
+      <div className={`site-container grid min-h-[25rem] items-center gap-8 py-12 md:py-16 ${withoutArtwork ? "" : "md:grid-cols-[1.05fr_.95fr]"}`}>
         <div className="relative z-10 animate-fade-in">
           <p className="eyebrow">{eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-black leading-tight text-primary md:text-5xl">{title}</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">{description}</p>
         </div>
-        <div className="hero-artwork-carousel relative z-10" aria-roledescription={images.length > 1 ? "carrossel" : undefined} aria-label={images.length > 1 ? "Artes informativas" : undefined}>
+        {!withoutArtwork && <div className="hero-artwork-carousel relative z-10" aria-roledescription={images.length > 1 ? "carrossel" : undefined} aria-label={images.length > 1 ? "Artes informativas" : undefined}>
           <img src={current.src} alt={current.alt} className="h-full w-full object-contain" />
           {images.length > 1 && <div className="absolute inset-x-3 top-3 flex items-center justify-between gap-3">
             <Button type="button" variant="outline" size="icon" aria-label="Arte anterior" onClick={() => setActive((active - 1 + images.length) % images.length)}><ChevronLeft /></Button>
@@ -144,7 +144,7 @@ export function PageHero({ eyebrow, title, description, artworks }: { eyebrow: s
             </div>
             <Button type="button" variant="outline" size="icon" aria-label="Próxima arte" onClick={() => setActive((active + 1) % images.length)}><ChevronRight /></Button>
           </div>}
-        </div>
+        </div>}
       </div>
     </section>
   );
