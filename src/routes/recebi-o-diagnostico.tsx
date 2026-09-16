@@ -4,7 +4,6 @@ import { AlertBanner, ContactPanel, InfoCard, PageHero, SectionTitle } from "@/c
 import { pageHead } from "@/lib/seo";
 import diagnosticoSusUbs from "@/assets/diagnostico-sus-ubs.jpeg.asset.json";
 import investigacaoDoencaRaraSus from "@/assets/investigacao-doenca-rara-sus.jpeg.asset.json";
-import oQueECln2 from "@/assets/o-que-e-cln2.jpeg.asset.json";
 
 export const Route = createFileRoute("/recebi-o-diagnostico")({
   head: () => pageHead("Diagnóstico, cuidados e tratamento | Instituto Francisquinho", "Orientações iniciais, cuidados e informações sobre tratamento para famílias após um diagnóstico ou suspeita de CLN2.", "/recebi-o-diagnostico"),
@@ -19,7 +18,6 @@ function DiagnosisPage() { return <>
   <PageHero eyebrow="Da orientação ao cuidado" title="Recebi um diagnóstico. Quais são os próximos passos?" description="Sabemos que receber a notícia de uma doença rara pode trazer muitas dúvidas. Esta página reúne primeiros passos, informações sobre cuidados e caminhos para buscar apoio." artworks={[
     { src: investigacaoDoencaRaraSus.url, alt: "Como buscar investigação de uma doença rara pelo SUS" },
     { src: diagnosticoSusUbs.url, alt: "Orientações para procurar a UBS e reunir documentos para encaminhamento" },
-    { src: oQueECln2.url, alt: "Informações introdutórias sobre CLN2, sinais e tratamento" },
   ]} />
   <div className="site-container py-10"><AlertBanner title="Respire. Você não precisa entender tudo de uma vez."><p>Comece por um passo de cada vez. Guarde suas dúvidas e leve-as às pessoas que acompanham sua família.</p></AlertBanner></div>
   <section className="site-container section-space pt-8"><SectionTitle eyebrow="Um caminho possível" title="Primeiros passos" description="Cada família tem uma realidade diferente. Use esta sequência como apoio para organizar o começo da jornada."/><ol className="mt-10 grid gap-4 md:grid-cols-2">{steps.map((step,i)=><li key={step} className="grid grid-cols-[3rem_minmax(0,1fr)] items-start gap-4 border-b border-border py-5"><span className="grid size-12 place-items-center rounded-full bg-primary font-black text-primary-foreground">{i+1}</span><div><h3 className="pt-2 text-lg font-black text-primary">{step}</h3></div></li>)}</ol></section>
