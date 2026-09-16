@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { AlertBanner, ContactPanel, InfoCard, PageHero, SectionTitle } from "@/components/site";
 import { pageHead } from "@/lib/seo";
-import doencasRarasArtwork from "@/assets/o-que-sao-doencas-raras.jpeg.asset.json";
+
 
 export const Route = createFileRoute("/outras-doencas-raras")({
   head: () =>
@@ -52,7 +52,7 @@ function OtherRareDiseasesPage() {
         eyebrow="Informação e orientação"
         title="Outras Doenças Raras"
         description="Além da CLN2, existem milhares de doenças raras. Reunimos informações de fontes oficiais para ajudar famílias a entender, reconhecer sinais e buscar diagnóstico e cuidado pelo SUS."
-        artworks={[{ src: doencasRarasArtwork.url, alt: "Arte informativa sobre o que são doenças raras, seus tipos e desafios" }]}
+        withoutArtwork
       />
 
       <section className="site-container section-space">
