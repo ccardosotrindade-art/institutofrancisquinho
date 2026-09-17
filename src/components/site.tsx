@@ -111,14 +111,12 @@ export function SiteFooter() {
         <div className="mt-12 border-t border-primary-foreground/20 pt-6 text-xs leading-5 text-primary-foreground/70">
           <p>Este site oferece conteúdo informativo e não substitui avaliação ou orientação de profissionais de saúde.</p>
           <p className="mt-3">© 2026 Instituto Francisquinho. Todos os direitos reservados. Política de privacidade em preparação.</p>
-          <div className="mt-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-            <span className="text-xs text-primary-foreground/80">Este site foi desenvolvido por</span>
-            <div className="flex flex-wrap items-center gap-3">
-              <a href="https://www.trindcardweb.online/" target="_blank" rel="noreferrer" aria-label="TrindCard Web" className="inline-block rounded bg-white/10 p-1.5 transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50">
-                <img src={trindcardAsset.url} alt="TrindCard Web" className="h-6 w-auto object-contain" loading="lazy" />
-              </a>
-              <a href="https://www.trindcardweb.online/" target="_blank" rel="noreferrer" className="font-black text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50">Conheça nossos serviços</a>
-            </div>
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <span className="text-xs text-primary-foreground/90">Este site foi desenvolvido por TrindCard Web.</span>
+            <a href="https://www.trindcardweb.online/" target="_blank" rel="noreferrer" aria-label="TrindCard Web" className="inline-block rounded bg-white/10 p-1.5 transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50">
+              <img src={trindcardAsset.url} alt="TrindCard Web" className="h-8 w-auto object-contain" loading="lazy" />
+            </a>
+            <a href="https://www.trindcardweb.online/" target="_blank" rel="noreferrer" className="text-xs font-black text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50">Conheça nossos serviços</a>
           </div>
         </div>
       </div>
