@@ -20,6 +20,7 @@ import type { LucideIcon } from "lucide-react";
 import logoAsset from "@/assets/instituto-logo-integrado.png.asset.json";
 import francisquinhoAsset from "@/assets/francisquinho.jpeg.asset.json";
 import heroOrientacao from "@/assets/hero-orientacao.jpg";
+import trindcardAsset from "@/assets/trindcard-web.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
