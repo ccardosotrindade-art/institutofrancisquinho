@@ -20,6 +20,7 @@ import type { LucideIcon } from "lucide-react";
 import logoAsset from "@/assets/instituto-logo-integrado.png.asset.json";
 import francisquinhoAsset from "@/assets/francisquinho.jpeg.asset.json";
 import heroOrientacao from "@/assets/hero-orientacao.jpg";
+import trindcardAsset from "@/assets/trindcard-web.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -110,6 +111,17 @@ export function SiteFooter() {
         <div className="mt-12 border-t border-primary-foreground/20 pt-6 text-xs leading-5 text-primary-foreground/70">
           <p>Este site oferece conteúdo informativo e não substitui avaliação ou orientação de profissionais de saúde.</p>
           <p className="mt-3">© 2026 Instituto Francisquinho. Todos os direitos reservados. Política de privacidade em preparação.</p>
+        </div>
+      </div>
+      <div className="border-t border-primary-foreground/20 bg-background">
+        <div className="site-container flex flex-col items-center justify-between gap-4 py-5 sm:flex-row">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
+            <span className="text-sm text-muted-foreground">Este site foi desenvolvido por</span>
+            <a href="https://www.trindcardweb.online/" target="_blank" rel="noreferrer" aria-label="TrindCard Web">
+              <img src={trindcardAsset.url} alt="TrindCard Web" className="h-7 w-auto object-contain" loading="lazy" />
+            </a>
+          </div>
+          <a href="https://www.trindcardweb.online/" target="_blank" rel="noreferrer" className="text-sm font-black text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Conheça nossos serviços</a>
         </div>
       </div>
     </footer>
