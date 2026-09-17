@@ -108,7 +108,7 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-primary-foreground/20 pt-6 text-xs leading-5 text-primary-foreground/70">
+        <div className="mt-12 border-t border-primary-foreground/20 pt-6 pb-14 text-xs leading-5 text-primary-foreground/70 sm:pb-0">
           <p>Este site oferece conteúdo informativo e não substitui avaliação ou orientação de profissionais de saúde.</p>
           <p className="mt-3">© 2026 Instituto Francisquinho. Todos os direitos reservados. Política de privacidade em preparação.</p>
           <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
