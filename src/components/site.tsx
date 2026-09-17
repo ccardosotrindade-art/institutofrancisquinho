@@ -113,6 +113,17 @@ export function SiteFooter() {
           <p className="mt-3">© 2026 Instituto Francisquinho. Todos os direitos reservados. Política de privacidade em preparação.</p>
         </div>
       </div>
+      <div className="border-t border-primary-foreground/20 bg-background">
+        <div className="site-container flex flex-col items-center justify-between gap-4 py-5 sm:flex-row">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
+            <span className="text-sm text-muted-foreground">Este site foi desenvolvido por</span>
+            <a href="https://www.trindcardweb.online/" target="_blank" rel="noreferrer" aria-label="TrindCard Web">
+              <img src={trindcardAsset.url} alt="TrindCard Web" className="h-7 w-auto object-contain" loading="lazy" />
+            </a>
+          </div>
+          <a href="https://www.trindcardweb.online/" target="_blank" rel="noreferrer" className="text-sm font-black text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Conheça nossos serviços</a>
+        </div>
+      </div>
     </footer>
   );
 }
