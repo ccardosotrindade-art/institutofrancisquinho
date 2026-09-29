@@ -28,7 +28,7 @@ function QuickCard({ href, icon: Icon, title, description }: { href: string; ico
       <span className="icon-tile">
         <Icon aria-hidden="true" />
       </span>
-      <h2 className="mt-5 text-xl font-black text-primary">{title}</h2>
+      <h3 className="mt-5 text-xl font-black text-primary">{title}</h3>
       <p className="mt-3 leading-7 text-muted-foreground">{description}</p>
       <span className="mt-4 inline-block text-sm font-black text-accent-strong">Ver esta seção</span>
     </a>
