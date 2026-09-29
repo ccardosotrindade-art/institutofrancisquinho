@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComoAjudarRouteImport } from './routes/como-ajudar'
 import { Route as CuidadosETratamentoRouteImport } from './routes/cuidados-e-tratamento'
 import { Route as DireitosEOrientacaoRouteImport } from './routes/direitos-e-orientacao'
+import { Route as NossasAcoesEEventosRouteImport } from './routes/nossas-acoes-e-eventos'
 import { Route as OutrasDoencasRarasRouteImport } from './routes/outras-doencas-raras'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as RecebiODiagnosticoRouteImport } from './routes/recebi-o-diagnostico'
@@ -37,6 +38,11 @@ const DireitosEOrientacaoRoute = DireitosEOrientacaoRouteImport.update({
   path: '/direitos-e-orientacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NossasAcoesEEventosRoute = NossasAcoesEEventosRouteImport.update({
+  id: '/nossas-acoes-e-eventos',
+  path: '/nossas-acoes-e-eventos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OutrasDoencasRarasRoute = OutrasDoencasRarasRouteImport.update({
   id: '/outras-doencas-raras',
   path: '/outras-doencas-raras',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/como-ajudar': typeof ComoAjudarRoute
   '/cuidados-e-tratamento': typeof CuidadosETratamentoRoute
   '/direitos-e-orientacao': typeof DireitosEOrientacaoRoute
+  '/nossas-acoes-e-eventos': typeof NossasAcoesEEventosRoute
   '/outras-doencas-raras': typeof OutrasDoencasRarasRoute
   '/quem-somos': typeof QuemSomosRoute
   '/recebi-o-diagnostico': typeof RecebiODiagnosticoRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/como-ajudar': typeof ComoAjudarRoute
   '/cuidados-e-tratamento': typeof CuidadosETratamentoRoute
   '/direitos-e-orientacao': typeof DireitosEOrientacaoRoute
+  '/nossas-acoes-e-eventos': typeof NossasAcoesEEventosRoute
   '/outras-doencas-raras': typeof OutrasDoencasRarasRoute
   '/quem-somos': typeof QuemSomosRoute
   '/recebi-o-diagnostico': typeof RecebiODiagnosticoRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/como-ajudar': typeof ComoAjudarRoute
   '/cuidados-e-tratamento': typeof CuidadosETratamentoRoute
   '/direitos-e-orientacao': typeof DireitosEOrientacaoRoute
+  '/nossas-acoes-e-eventos': typeof NossasAcoesEEventosRoute
   '/outras-doencas-raras': typeof OutrasDoencasRarasRoute
   '/quem-somos': typeof QuemSomosRoute
   '/recebi-o-diagnostico': typeof RecebiODiagnosticoRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/como-ajudar'
     | '/cuidados-e-tratamento'
     | '/direitos-e-orientacao'
+    | '/nossas-acoes-e-eventos'
     | '/outras-doencas-raras'
     | '/quem-somos'
     | '/recebi-o-diagnostico'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/como-ajudar'
     | '/cuidados-e-tratamento'
     | '/direitos-e-orientacao'
+    | '/nossas-acoes-e-eventos'
     | '/outras-doencas-raras'
     | '/quem-somos'
     | '/recebi-o-diagnostico'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/como-ajudar'
     | '/cuidados-e-tratamento'
     | '/direitos-e-orientacao'
+    | '/nossas-acoes-e-eventos'
     | '/outras-doencas-raras'
     | '/quem-somos'
     | '/recebi-o-diagnostico'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   ComoAjudarRoute: typeof ComoAjudarRoute
   CuidadosETratamentoRoute: typeof CuidadosETratamentoRoute
   DireitosEOrientacaoRoute: typeof DireitosEOrientacaoRoute
+  NossasAcoesEEventosRoute: typeof NossasAcoesEEventosRoute
   OutrasDoencasRarasRoute: typeof OutrasDoencasRarasRoute
   QuemSomosRoute: typeof QuemSomosRoute
   RecebiODiagnosticoRoute: typeof RecebiODiagnosticoRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DireitosEOrientacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nossas-acoes-e-eventos': {
+      id: '/nossas-acoes-e-eventos'
+      path: '/nossas-acoes-e-eventos'
+      fullPath: '/nossas-acoes-e-eventos'
+      preLoaderRoute: typeof NossasAcoesEEventosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/outras-doencas-raras': {
       id: '/outras-doencas-raras'
       path: '/outras-doencas-raras'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComoAjudarRoute: ComoAjudarRoute,
   CuidadosETratamentoRoute: CuidadosETratamentoRoute,
   DireitosEOrientacaoRoute: DireitosEOrientacaoRoute,
+  NossasAcoesEEventosRoute: NossasAcoesEEventosRoute,
   OutrasDoencasRarasRoute: OutrasDoencasRarasRoute,
   QuemSomosRoute: QuemSomosRoute,
   RecebiODiagnosticoRoute: RecebiODiagnosticoRoute,

@@ -17,3 +17,5 @@
 - [x] Add the five supplied information artworks to contextual page carousels
 - [x] Verify carousel controls, readability, and mobile presentation
 - [x] Publish view-only institutional documents in the transparency section
+- [x] Add the “Nossas Ações e Eventos” page with sections for events, lectures, and inclusion actions
+- [ ] Add real photos, captions, and texts to each section of “Nossas Ações e Eventos” (waiting for the family’s images and descriptions)
