@@ -60,6 +60,22 @@ function ActionsPage() {
         withoutArtwork
       />
 
+      <section aria-label="Registro de ações do Instituto" className="site-container pt-4">
+        <figure>
+          <img
+            src={actionsBanner.url}
+            alt="Composição com quatro registros: uma família com criança em cadeira de rodas em um desfile; um grupo de crianças, adultos e personagens caracterizados em uma mobilização de rua; um grupo de mulheres com faixa em uma ação comunitária; e uma pessoa diante do painel do Fórum Brasileiro de Doenças Raras e Negligenciadas."
+            width={1600}
+            height={760}
+            className="w-full rounded-2xl"
+          />
+          <figcaption className="mt-3 text-xs leading-5 text-muted-foreground">
+            Registros de participações em mobilizações, ações comunitárias e encontros sobre doenças raras.
+          </figcaption>
+        </figure>
+      </section>
+
+
       <section className="site-container section-space">
         <SectionTitle eyebrow="Navegue pelas seções" title="O que você encontrará aqui" description="Cada seção reúne um tipo de atividade. Os registros serão publicados conforme as ações acontecerem." />
         <nav aria-label="Seções desta página" className="mt-10 grid gap-5 md:grid-cols-3">
