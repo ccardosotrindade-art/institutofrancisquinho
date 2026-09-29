@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CalendarDays, HandHeart, Mic, type LucideIcon } from "lucide-react";
 import { ContactPanel, EmptyState, PageHero, SectionTitle } from "@/components/site";
 import { pageHead } from "@/lib/seo";
+import actionsBanner from "@/assets/acoes-eventos-banner.jpg.asset.json";
 
 export const Route = createFileRoute("/nossas-acoes-e-eventos")({
   head: () =>
