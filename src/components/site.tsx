@@ -36,6 +36,7 @@ const navItems = [
   { label: "Recebi o Diagnóstico", to: "/recebi-o-diagnostico" as const },
   { label: "Outras Doenças Raras", to: "/outras-doencas-raras" as const },
   { label: "Direitos e Orientação", to: "/direitos-e-orientacao" as const },
+  { label: "Nossas Ações e Eventos", to: "/nossas-acoes-e-eventos" as const },
   { label: "Quem Somos", to: "/quem-somos" as const },
   { label: "Como Ajudar", to: "/como-ajudar" as const },
 ];
@@ -75,7 +76,7 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   const groups = [
-    { title: "Instituto", links: [{ label: "Sobre o Instituto", to: "/quem-somos" as const }, { label: "Nossa missão", to: "/quem-somos" as const }, { label: "Equipe gestora", to: "/quem-somos" as const }, { label: "Transparência", to: "/quem-somos" as const }] },
+    { title: "Instituto", links: [{ label: "Sobre o Instituto", to: "/quem-somos" as const }, { label: "Nossa missão", to: "/quem-somos" as const }, { label: "Equipe gestora", to: "/quem-somos" as const }, { label: "Transparência", to: "/quem-somos" as const }, { label: "Nossas ações e eventos", to: "/nossas-acoes-e-eventos" as const }] },
     { title: "Informação e orientação", links: [{ label: "Diagnóstico, cuidados e tratamento", to: "/recebi-o-diagnostico" as const }, { label: "Outras doenças raras", to: "/outras-doencas-raras" as const }, { label: "Direitos e orientação", to: "/direitos-e-orientacao" as const }] },
     { title: "Como ajudar", links: [{ label: "Doações", to: "/como-ajudar" as const }, { label: "Voluntariado", to: "/como-ajudar" as const }, { label: "Campanhas e eventos", to: "/como-ajudar" as const }] },
   ];
