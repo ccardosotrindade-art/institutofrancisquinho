@@ -127,7 +127,7 @@ export function SiteFooter() {
 
 type HeroArtwork = { src: string; alt: string };
 
-export function PageHero({ eyebrow, title, description, artworks, withoutArtwork = false }: { eyebrow: string; title: string; description: string; artworks?: readonly HeroArtwork[]; withoutArtwork?: boolean }) {
+export function PageHero({ eyebrow, title, description, artworks, withoutArtwork = false, backgroundImage }: { eyebrow: string; title: string; description: string; artworks?: readonly HeroArtwork[]; withoutArtwork?: boolean; backgroundImage?: HeroArtwork }) {
   const images = artworks?.length ? artworks : [{ src: heroOrientacao, alt: "" }];
   const [active, setActive] = useState(0);
   useEffect(() => {
@@ -136,6 +136,19 @@ export function PageHero({ eyebrow, title, description, artworks, withoutArtwork
     return () => window.clearInterval(timer);
   }, [images.length]);
   const current = images[active] ?? images[0] ?? { src: heroOrientacao, alt: "" };
+  if (backgroundImage) return (
+    <section className="page-hero page-hero-background">
+      <img src={backgroundImage.src} alt={backgroundImage.alt} className="page-hero-background-image" />
+      <div className="page-hero-background-shade" aria-hidden="true" />
+      <div className="site-container relative z-10 flex min-h-[26rem] items-center py-12 md:min-h-[35rem] md:py-16">
+        <div className="max-w-2xl animate-fade-in">
+          <p className="eyebrow text-primary-foreground">{eyebrow}</p>
+          <h1 className="mt-4 text-4xl font-black leading-tight text-primary-foreground md:text-5xl">{title}</h1>
+          <p className="mt-5 max-w-xl text-lg leading-8 text-primary-foreground/90">{description}</p>
+        </div>
+      </div>
+    </section>
+  );
   return (
     <section className="page-hero">
       <div className={`site-container grid min-h-[25rem] items-center gap-8 py-12 md:py-16 ${withoutArtwork ? "" : "md:grid-cols-[1.05fr_.95fr]"}`}>
