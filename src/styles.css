@@ -246,6 +246,27 @@
     background-size: 80px 80px, 130px 130px;
   }
 
+  .page-hero-background::before {
+    display: none;
+  }
+
+  .page-hero-background-image,
+  .page-hero-background-shade {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .page-hero-background-image {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .page-hero-background-shade {
+    background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 94%, transparent) 0%, color-mix(in oklab, var(--primary) 76%, transparent) 35%, color-mix(in oklab, var(--primary) 18%, transparent) 58%, transparent 72%);
+  }
+
   .info-card {
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   }
@@ -282,6 +303,8 @@
   }
 
   .hero-slide-image { object-position: 68% center; }
+  .page-hero-background-image { object-position: 64% center; }
+  .page-hero-background-shade { background: color-mix(in oklab, var(--primary) 68%, transparent); }
   .floating-help { bottom: .75rem; right: .75rem; }
   .hero-artwork-carousel { height: auto; min-height: 0; aspect-ratio: 1 / 1; }
 }

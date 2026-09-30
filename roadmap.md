@@ -19,4 +19,5 @@
 - [x] Publish view-only institutional documents in the transparency section
 - [x] Add the “Nossas Ações e Eventos” page with sections for events, lectures, and inclusion actions
 - [x] Compose the four supplied photos into a single page banner and publish it
+- [x] Create and publish a panoramic Marajó riverside hero for “Quem Somos” using the official logo
 - [ ] Add real photos, captions, and texts to each section of “Nossas Ações e Eventos” (waiting for the family’s descriptions of each event, lecture, and action)
