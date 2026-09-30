@@ -3,7 +3,7 @@ import { Compass, Eye, FileText, HeartHandshake } from "lucide-react";
 import certidaoEstatuto from "@/assets/certidao-estatuto.pdf.asset.json";
 import cnpjDocumento from "@/assets/cnpj.pdf.asset.json";
 import equipeGestora from "@/assets/equipe-gestora-casal.jpg";
-import historiaMissao from "@/assets/historia-missao-instituto.jpeg.asset.json";
+import quemSomosHero from "@/assets/quem-somos-hero.jpg";
 import { AlertBanner, EmptyState, InfoCard, PageHero, SectionTitle, francisquinhoAsset } from "@/components/site";
 import { pageHead } from "@/lib/seo";
 
