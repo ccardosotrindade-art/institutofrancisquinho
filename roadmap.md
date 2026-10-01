@@ -18,7 +18,7 @@
 - [x] Verify carousel controls, readability, and mobile presentation
 - [x] Publish view-only institutional documents in the transparency section
 - [x] Add the “Nossas Ações e Eventos” page with sections for events, lectures, and inclusion actions
-- [x] Compose the four supplied photos into a single page banner and publish it
+- [x] Move the four-photo composition into the “Nossas Ações e Eventos” hero as a scattered, overlapping arrangement (banner removed)
 - [x] Create and publish a panoramic Marajó riverside hero for “Quem Somos” using the official logo
 - [x] Replace the white-background illustration in “Nossa história” with the rehabilitation-room artwork
 - [x] Add the full-width hands hero to the “Outras Doenças Raras” page
