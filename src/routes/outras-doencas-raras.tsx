@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Stethoscope,
 } from "lucide-react";
+import outrasDoencasRarasHero from "@/assets/outras-doencas-raras-hero.jpg";
 import { AlertBanner, ContactPanel, InfoCard, PageHero, SectionTitle } from "@/components/site";
 import { pageHead } from "@/lib/seo";
 
@@ -52,7 +53,10 @@ function OtherRareDiseasesPage() {
         eyebrow="Informação e orientação"
         title="Outras Doenças Raras"
         description="Além da CLN2, existem milhares de doenças raras. Reunimos informações de fontes oficiais para ajudar famílias a entender, reconhecer sinais e buscar diagnóstico e cuidado pelo SUS."
-        withoutArtwork
+        backgroundImage={{
+          src: outrasDoencasRarasHero,
+          alt: "Mãos abertas de diferentes idades unidas em círculo sobre um fundo azul-marinho, com um pequeno laço vermelho em um dos pulsos",
+        }}
       />
 
       <section className="site-container section-space">
