@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CalendarDays, HandHeart, Mic, type LucideIcon } from "lucide-react";
 import { ContactPanel, EmptyState, PageHero, SectionTitle } from "@/components/site";
 import { pageHead } from "@/lib/seo";
-import actionsBanner from "@/assets/acoes-eventos-banner.jpg.asset.json";
+import actionsHero from "@/assets/nossas-acoes-hero.jpg.asset.json";
 
 export const Route = createFileRoute("/nossas-acoes-e-eventos")({
   head: () =>
@@ -58,22 +58,12 @@ function ActionsPage() {
         title="Nossas ações e eventos"
         description="Apoiar famílias também é estar presente. Nesta página reunimos as iniciativas do Instituto Francisquinho junto à comunidade, com fotos, legendas e relatos de cada atividade."
         withoutArtwork
+        backgroundImage={{
+          src: actionsHero.url,
+          alt: "Composição com quatro registros do Instituto: uma família com criança em cadeira de rodas em um desfile; um grupo com crianças, adultos e personagens caracterizados em uma mobilização de rua; um grupo de mulheres com faixa em uma ação comunitária; e uma pessoa diante do painel do Fórum Brasileiro de Doenças Raras e Negligenciadas.",
+        }}
       />
 
-      <section aria-label="Registro de ações do Instituto" className="site-container pt-4">
-        <figure>
-          <img
-            src={actionsBanner.url}
-            alt="Composição com quatro registros: uma família com criança em cadeira de rodas em um desfile; um grupo de crianças, adultos e personagens caracterizados em uma mobilização de rua; um grupo de mulheres com faixa em uma ação comunitária; e uma pessoa diante do painel do Fórum Brasileiro de Doenças Raras e Negligenciadas."
-            width={1600}
-            height={760}
-            className="w-full rounded-2xl"
-          />
-          <figcaption className="mt-3 text-xs leading-5 text-muted-foreground">
-            Registros de participações em mobilizações, ações comunitárias e encontros sobre doenças raras.
-          </figcaption>
-        </figure>
-      </section>
 
 
       <section className="site-container section-space">
