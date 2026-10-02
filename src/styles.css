@@ -303,7 +303,7 @@
   }
 
   .hero-scrim {
-    background: linear-gradient(180deg, transparent 0%, transparent 27%, color-mix(in oklab, var(--background) 82%, transparent) 36%, var(--background) 44%);
+    background: transparent;
   }
 
   .hero-slide-image {
