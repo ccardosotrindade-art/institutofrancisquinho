@@ -298,11 +298,28 @@
 }
 
 @media (max-width: 47.99rem) {
-  .hero-scrim {
-    background: linear-gradient(90deg, color-mix(in oklab, var(--background) 98%, transparent) 0%, color-mix(in oklab, var(--background) 94%, transparent) 70%, color-mix(in oklab, var(--background) 78%, transparent) 100%);
+  .hero-carousel {
+    background: var(--background);
   }
 
-  .hero-slide-image { object-position: 68% center; }
+  .hero-scrim {
+    background: linear-gradient(180deg, transparent 0%, transparent 27%, color-mix(in oklab, var(--background) 82%, transparent) 36%, var(--background) 44%);
+  }
+
+  .hero-slide-image {
+    height: auto;
+    aspect-ratio: 1600 / 1008;
+    object-fit: contain;
+    object-position: top center;
+  }
+
+  .hero-carousel .site-container.min-h-\[34rem\] {
+    min-height: 47rem;
+    align-items: flex-start;
+    padding-top: 19rem;
+    padding-bottom: 6rem;
+  }
+
   .page-hero-background {
     background: var(--primary);
   }
