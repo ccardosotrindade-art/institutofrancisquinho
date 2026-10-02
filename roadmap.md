@@ -23,4 +23,6 @@
 - [x] Replace the white-background illustration in “Nossa história” with the rehabilitation-room artwork
 - [x] Add the full-width hands hero to the “Outras Doenças Raras” page
 - [x] Add the full-width documents-and-seal hero to the “Direitos e orientação” page
+- [x] Add the full-width paper-heart hero to the “Como Ajudar” page
 - [ ] Add real photos, captions, and texts to each section of “Nossas Ações e Eventos” (waiting for the family’s descriptions of each event, lecture, and action)
+
