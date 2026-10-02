@@ -24,5 +24,6 @@
 - [x] Add the full-width hands hero to the “Outras Doenças Raras” page
 - [x] Add the full-width documents-and-seal hero to the “Direitos e orientação” page
 - [x] Add the full-width paper-heart hero to the “Como Ajudar” page
+- [x] Replace the second and third Home carousel images with the supplied lecture and crowd photos
 - [ ] Add real photos, captions, and texts to each section of “Nossas Ações e Eventos” (waiting for the family’s descriptions of each event, lecture, and action)
 

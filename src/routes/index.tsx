@@ -4,10 +4,11 @@ import { ArrowLeft, ArrowRight, BookOpenCheck, HeartHandshake, Info, Pause, Play
 import { AlertBanner, ContactDetails, InfoCard, SectionTitle, SimpleForm, commonIcons } from "@/components/site";
 import { Button } from "@/components/ui/button";
 import { pageHead } from "@/lib/seo";
-import heroOrientacao from "@/assets/hero-orientacao.jpg";
 import heroComunidade from "@/assets/hero-comunidade.jpg";
 import heroFrancisquinho from "@/assets/hero-francisquinho.jpg";
 import cln2Genetica from "@/assets/cln2-genetica.jpg";
+import homePalestra from "@/assets/home-palestra.jpg.asset.json";
+import homeMultidao from "@/assets/home-multidao.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => pageHead("Instituto Francisquinho | Apoio às famílias com CLN2", "Informação, acolhimento e apoio para famílias que enfrentam CLN2 e outras doenças raras no Pará.", "/"),
@@ -24,8 +25,8 @@ const careCards = [[Stethoscope,"Tratamento e acompanhamento"],[Users,"Equipe mu
 
 const heroSlides = [
   { eyebrow: "Informação, acolhimento e apoio", title: "Você não precisa enfrentar uma doença rara sozinho.", description: "O Instituto Francisquinho acolhe, informa e orienta famílias que convivem com a CLN2 e outras doenças raras.", image: heroFrancisquinho, alt: "Francisquinho sorrindo em sua cadeira de rodas em um jardim acolhedor", action: "Recebi um diagnóstico", to: "/recebi-o-diagnostico" as const },
-  { eyebrow: "Orientação para cada etapa", title: "Informação clara ajuda a encontrar caminhos.", description: "Reunimos conteúdos sobre diagnóstico, cuidados e tratamento para apoiar conversas com profissionais e organizar os próximos passos.", image: heroOrientacao, alt: "Profissional de saúde orientando uma mãe e uma criança em um caminho de descobertas", action: "Conheça esta jornada", to: "/recebi-o-diagnostico" as const },
-  { eyebrow: "Uma rede que acolhe", title: "Juntos, ampliamos o apoio às famílias.", description: "Conheça formas de participar, colaborar e fortalecer uma comunidade dedicada às pessoas com doenças raras.", image: heroComunidade, alt: "Comunidade diversa reunida em torno de uma criança e sua família", action: "Veja como ajudar", to: "/como-ajudar" as const },
+  { eyebrow: "Orientação para cada etapa", title: "Informação clara ajuda a encontrar caminhos.", description: "Reunimos conteúdos sobre diagnóstico, cuidados e tratamento para apoiar conversas com profissionais e organizar os próximos passos.", image: homePalestra.url, alt: "Palestra no Fórum Brasileiro de Doenças Raras e Negligenciadas, com intérprete de Libras, painelistas e público", action: "Conheça esta jornada", to: "/recebi-o-diagnostico" as const },
+  { eyebrow: "Uma rede que acolhe", title: "Juntos, ampliamos o apoio às famílias.", description: "Conheça formas de participar, colaborar e fortalecer uma comunidade dedicada às pessoas com doenças raras.", image: homeMultidao.url, alt: "Grande mobilização popular em uma rua, com pessoas reunidas e balões coloridos", action: "Veja como ajudar", to: "/como-ajudar" as const },
 ] as const;
 
 function HeroCarousel() {
