@@ -118,7 +118,7 @@ const palestraCiirGallery = (
   <ActivityGallery
     eyebrow="Palestra"
     title="Palestra no Centro Integrado de Inclusão e Reabilitação – CIIR / Belém – PA"
-    description="Encontro com famílias e pacientes no saguão do CIIR, em Belém, para conversar sobre doenças raras, caminhos de diagnóstico e direitos das famílias."
+    description="Registros fotográficos da palestra realizada no saguão do Centro Integrado de Inclusão e Reabilitação (CIIR), em Belém, com a participação de famílias e pacientes."
     photos={palestraCiirPhotos}
     srCaption="Fotos da palestra no Centro Integrado de Inclusão e Reabilitação (CIIR), em Belém – PA."
   />
