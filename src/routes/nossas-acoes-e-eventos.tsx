@@ -186,7 +186,9 @@ function ActionsPage() {
         details="Nesta seção apresentaremos as palestras realizadas, com o tema abordado, o público alcançado e as imagens do momento. O objetivo é mostrar como a informação circula e apoiar outras pessoas que desejem organizar atividades semelhantes."
         emptyTitle="Programação em preparação"
         emptyDescription="Os temas, os locais e os relatos das palestras realizadas serão incluídos aqui, acompanhados das fotos de cada atividade."
-      />
+      >
+        {palestraCiirGallery}
+      </ActionSection>
 
       <ActionSection
         id="acoes-de-inclusao"
