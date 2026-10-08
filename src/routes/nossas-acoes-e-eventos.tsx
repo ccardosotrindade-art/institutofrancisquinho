@@ -159,10 +159,12 @@ function ActionsPage() {
         title="Ações de Inclusão"
         description="Inclusão é garantir que todas as pessoas possam estar presentes, ser acolhidas e ter sua voz considerada."
         details="Aqui reuniremos as ações do Instituto voltadas à acessibilidade e à participação de pessoas com deficiência e suas famílias: adaptações de espaços e materiais, atividades que envolvem a comunidade e iniciativas que valorizam a diversidade."
-        emptyTitle="Ações em preparação"
-        emptyDescription="As fotos, as legendas e os textos sobre cada ação de inclusão serão publicados nesta seção."
+        emptyTitle="Novas ações em preparação"
+        emptyDescription="As fotos, as legendas e os textos das próximas ações de inclusão serão publicados nesta seção."
         reverse
-      />
+      >
+        <CarnararosGallery />
+      </ActionSection>
 
       <section className="site-container pb-14">
         <p className="max-w-3xl text-xs leading-5 text-muted-foreground">
