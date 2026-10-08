@@ -3,6 +3,18 @@ import { CalendarDays, HandHeart, Mic, type LucideIcon } from "lucide-react";
 import { ContactPanel, EmptyState, PageHero, SectionTitle } from "@/components/site";
 import { pageHead } from "@/lib/seo";
 import actionsHero from "@/assets/nossas-acoes-hero.jpg.asset.json";
+import carnararos01 from "@/assets/carnararos-2026-01.jpg.asset.json";
+import carnararos02 from "@/assets/carnararos-2026-02.jpg.asset.json";
+import carnararos03 from "@/assets/carnararos-2026-03.jpg.asset.json";
+import carnararos04 from "@/assets/carnararos-2026-04.jpg.asset.json";
+import carnararos05 from "@/assets/carnararos-2026-05.jpg.asset.json";
+import carnararos06 from "@/assets/carnararos-2026-06.jpg.asset.json";
+import carnararos07 from "@/assets/carnararos-2026-07.jpg.asset.json";
+import carnararos08 from "@/assets/carnararos-2026-08.jpg.asset.json";
+import carnararos09 from "@/assets/carnararos-2026-09.jpg.asset.json";
+import carnararos10 from "@/assets/carnararos-2026-10.jpg.asset.json";
+import carnararos11 from "@/assets/carnararos-2026-11.jpg.asset.json";
+import carnararos12 from "@/assets/carnararos-2026-12.jpg.asset.json";
 
 export const Route = createFileRoute("/nossas-acoes-e-eventos")({
   head: () =>
