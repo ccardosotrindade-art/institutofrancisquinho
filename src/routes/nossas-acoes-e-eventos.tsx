@@ -1,8 +1,21 @@
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { CalendarDays, HandHeart, Mic, type LucideIcon } from "lucide-react";
 import { ContactPanel, EmptyState, PageHero, SectionTitle } from "@/components/site";
 import { pageHead } from "@/lib/seo";
 import actionsHero from "@/assets/nossas-acoes-hero.jpg.asset.json";
+import carnararos01 from "@/assets/carnararos-2026-01.jpg.asset.json";
+import carnararos02 from "@/assets/carnararos-2026-02.jpg.asset.json";
+import carnararos03 from "@/assets/carnararos-2026-03.jpg.asset.json";
+import carnararos04 from "@/assets/carnararos-2026-04.jpg.asset.json";
+import carnararos05 from "@/assets/carnararos-2026-05.jpg.asset.json";
+import carnararos06 from "@/assets/carnararos-2026-06.jpg.asset.json";
+import carnararos07 from "@/assets/carnararos-2026-07.jpg.asset.json";
+import carnararos08 from "@/assets/carnararos-2026-08.jpg.asset.json";
+import carnararos09 from "@/assets/carnararos-2026-09.jpg.asset.json";
+import carnararos10 from "@/assets/carnararos-2026-10.jpg.asset.json";
+import carnararos11 from "@/assets/carnararos-2026-11.jpg.asset.json";
+import carnararos12 from "@/assets/carnararos-2026-12.jpg.asset.json";
 
 export const Route = createFileRoute("/nossas-acoes-e-eventos")({
   head: () =>
@@ -36,15 +49,59 @@ function QuickCard({ href, icon: Icon, title, description }: { href: string; ico
   );
 }
 
-function ActionSection({ id, eyebrow, title, description, details, emptyTitle, emptyDescription, reverse = false }: { id: string; eyebrow: string; title: string; description: string; details: string; emptyTitle: string; emptyDescription: string; reverse?: boolean }) {
+const carnararosPhotos = [
+  { src: carnararos01.url, alt: "Portão de abertura escrito “Carna Breves 2026” com o público reunido na avenida" },
+  { src: carnararos02.url, alt: "Trio elétrico com a faixa do Dia Mundial das Doenças Raras durante o Carnararos" },
+  { src: carnararos03.url, alt: "Família com criança em cadeira de rodas em frente ao trio elétrico no Carnararos" },
+  { src: carnararos04.url, alt: "Grupo de participantes com camisetas do Carnararos em frente ao trio elétrico" },
+  { src: carnararos05.url, alt: "Grupo de mulheres segurando a faixa do CSA Carnararos" },
+  { src: carnararos06.url, alt: "Trio elétrico circulando na avenida durante o Carnararos" },
+  { src: carnararos07.url, alt: "Público acompanhando a passagem do trio elétrico na avenida" },
+  { src: carnararos08.url, alt: "Público com guarda-chuvas coloridos acompanhando o Carnararos na avenida" },
+  { src: carnararos09.url, alt: "Público fantasiado, com asas de borboleta, acompanhando o desfile do Carnararos" },
+  { src: carnararos10.url, alt: "Grupo de mulheres com camisetas temáticas do Carnararos na avenida" },
+  { src: carnararos11.url, alt: "Grupo de participantes posando com um cartão gigante de premiação do Carnararos" },
+  { src: carnararos12.url, alt: "Grupo de participantes do Carnararos reunido à noite em Breves" },
+] as const;
+
+function CarnararosGallery() {
+  return (
+    <article className="info-card mt-8">
+      <p className="eyebrow">Ação de inclusão</p>
+      <h3 className="mt-2 text-2xl font-black leading-tight text-primary">Carnararos 2026 / Breves – Marajó – Pará</h3>
+      <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
+        Registros fotográficos da participação do Instituto Francisquinho, das famílias e da comunidade no Carnararos 2026, em Breves.
+      </p>
+      <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
+        {carnararosPhotos.map((photo) => (
+          <figure key={photo.src} className="mb-4 break-inside-avoid">
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              loading="lazy"
+              className="w-full rounded-md border border-border bg-surface-soft shadow-sm"
+            />
+          </figure>
+        ))}
+      </div>
+      <figcaption className="sr-only">Fotos da ação Carnararos 2026, em Breves – Marajó – Pará.</figcaption>
+    </article>
+  );
+}
+
+function ActionSection({ id, eyebrow, title, description, details, emptyTitle, emptyDescription, reverse = false, children }: { id: string; eyebrow: string; title: string; description: string; details: string; emptyTitle: string; emptyDescription: string; reverse?: boolean; children?: ReactNode }) {
   return (
     <section id={id} className={reverse ? "bg-surface-soft" : ""}>
       <div className="site-container section-space">
         <SectionTitle eyebrow={eyebrow} title={title} description={description} />
         <p className="mt-6 max-w-3xl leading-7 text-muted-foreground">{details}</p>
-        <div className="mt-8 max-w-3xl">
-          <EmptyState title={emptyTitle} description={emptyDescription} />
-        </div>
+        {children ? (
+          <div className="mt-8">{children}</div>
+        ) : (
+          <div className="mt-8 max-w-3xl">
+            <EmptyState title={emptyTitle} description={emptyDescription} />
+          </div>
+        )}
       </div>
     </section>
   );
@@ -102,10 +159,12 @@ function ActionsPage() {
         title="Ações de Inclusão"
         description="Inclusão é garantir que todas as pessoas possam estar presentes, ser acolhidas e ter sua voz considerada."
         details="Aqui reuniremos as ações do Instituto voltadas à acessibilidade e à participação de pessoas com deficiência e suas famílias: adaptações de espaços e materiais, atividades que envolvem a comunidade e iniciativas que valorizam a diversidade."
-        emptyTitle="Ações em preparação"
-        emptyDescription="As fotos, as legendas e os textos sobre cada ação de inclusão serão publicados nesta seção."
+        emptyTitle="Novas ações em preparação"
+        emptyDescription="As fotos, as legendas e os textos das próximas ações de inclusão serão publicados nesta seção."
         reverse
-      />
+      >
+        <CarnararosGallery />
+      </ActionSection>
 
       <section className="site-container pb-14">
         <p className="max-w-3xl text-xs leading-5 text-muted-foreground">
