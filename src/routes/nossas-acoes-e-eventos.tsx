@@ -16,6 +16,12 @@ import carnararos09 from "@/assets/carnararos-2026-09.jpg.asset.json";
 import carnararos10 from "@/assets/carnararos-2026-10.jpg.asset.json";
 import carnararos11 from "@/assets/carnararos-2026-11.jpg.asset.json";
 import carnararos12 from "@/assets/carnararos-2026-12.jpg.asset.json";
+import palestraCiir01 from "@/assets/palestra-ciir-01.jpg.asset.json";
+import palestraCiir02 from "@/assets/palestra-ciir-02.jpg.asset.json";
+import palestraCiir03 from "@/assets/palestra-ciir-03.jpg.asset.json";
+import palestraCiir04 from "@/assets/palestra-ciir-04.jpg.asset.json";
+import palestraCiir05 from "@/assets/palestra-ciir-05.jpg.asset.json";
+import palestraCiir06 from "@/assets/palestra-ciir-06.jpg.asset.json";
 
 export const Route = createFileRoute("/nossas-acoes-e-eventos")({
   head: () =>
