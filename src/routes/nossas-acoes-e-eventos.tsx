@@ -16,6 +16,12 @@ import carnararos09 from "@/assets/carnararos-2026-09.jpg.asset.json";
 import carnararos10 from "@/assets/carnararos-2026-10.jpg.asset.json";
 import carnararos11 from "@/assets/carnararos-2026-11.jpg.asset.json";
 import carnararos12 from "@/assets/carnararos-2026-12.jpg.asset.json";
+import palestraCiir01 from "@/assets/palestra-ciir-01.jpg.asset.json";
+import palestraCiir02 from "@/assets/palestra-ciir-02.jpg.asset.json";
+import palestraCiir03 from "@/assets/palestra-ciir-03.jpg.asset.json";
+import palestraCiir04 from "@/assets/palestra-ciir-04.jpg.asset.json";
+import palestraCiir05 from "@/assets/palestra-ciir-05.jpg.asset.json";
+import palestraCiir06 from "@/assets/palestra-ciir-06.jpg.asset.json";
 
 export const Route = createFileRoute("/nossas-acoes-e-eventos")({
   head: () =>
@@ -64,16 +70,16 @@ const carnararosPhotos = [
   { src: carnararos12.url, alt: "Grupo de participantes do Carnararos reunido à noite em Breves" },
 ] as const;
 
-function CarnararosGallery() {
+type GalleryPhoto = { readonly src: string; readonly alt: string };
+
+function ActivityGallery({ eyebrow, title, description, photos, srCaption }: { eyebrow: string; title: string; description: string; photos: readonly GalleryPhoto[]; srCaption: string }) {
   return (
     <article className="info-card mt-8">
-      <p className="eyebrow">Ação de inclusão</p>
-      <h3 className="mt-2 text-2xl font-black leading-tight text-primary">Carnararos 2026 / Breves – Marajó – Pará</h3>
-      <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
-        Registros fotográficos da participação do Instituto Francisquinho, das famílias e da comunidade no Carnararos 2026, em Breves.
-      </p>
+      <p className="eyebrow">{eyebrow}</p>
+      <h3 className="mt-2 text-2xl font-black leading-tight text-primary">{title}</h3>
+      <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">{description}</p>
       <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
-        {carnararosPhotos.map((photo) => (
+        {photos.map((photo) => (
           <figure key={photo.src} className="mb-4 break-inside-avoid">
             <img
               src={photo.src}
@@ -84,10 +90,39 @@ function CarnararosGallery() {
           </figure>
         ))}
       </div>
-      <figcaption className="sr-only">Fotos da ação Carnararos 2026, em Breves – Marajó – Pará.</figcaption>
+      <figcaption className="sr-only">{srCaption}</figcaption>
     </article>
   );
 }
+
+const carnararosGallery = (
+  <ActivityGallery
+    eyebrow="Ação de inclusão"
+    title="Carnararos 2026 / Breves – Marajó – Pará"
+    description="Registros fotográficos da participação do Instituto Francisquinho, das famílias e da comunidade no Carnararos 2026, em Breves."
+    photos={carnararosPhotos}
+    srCaption="Fotos da ação Carnararos 2026, em Breves – Marajó – Pará."
+  />
+);
+
+const palestraCiirPhotos = [
+  { src: palestraCiir01.url, alt: "Famílias, pessoas em cadeiras de rodas e equipe reunidas no saguão do CIIR durante a palestra" },
+  { src: palestraCiir02.url, alt: "Palestrante falando ao público sentado em frente ao mural colorido do CIIR" },
+  { src: palestraCiir03.url, alt: "Visão ampla do saguão do CIIR com o público reunido para a palestra" },
+  { src: palestraCiir04.url, alt: "Famílias assistindo à palestra no saguão do CIIR" },
+  { src: palestraCiir05.url, alt: "Público reunido no saguão do CIIR, com o letreiro do Centro Integrado de Inclusão e Reabilitação ao fundo" },
+  { src: palestraCiir06.url, alt: "Saguão do CIIR com pássaros de papel suspensos e o público acompanhando a palestra" },
+] as const;
+
+const palestraCiirGallery = (
+  <ActivityGallery
+    eyebrow="Palestra"
+    title="Palestra no Centro Integrado de Inclusão e Reabilitação – CIIR / Belém – PA"
+    description="Registros fotográficos da palestra realizada no saguão do Centro Integrado de Inclusão e Reabilitação (CIIR), em Belém, com a participação de famílias e pacientes."
+    photos={palestraCiirPhotos}
+    srCaption="Fotos da palestra no Centro Integrado de Inclusão e Reabilitação (CIIR), em Belém – PA."
+  />
+);
 
 function ActionSection({ id, eyebrow, title, description, details, emptyTitle, emptyDescription, reverse = false, children }: { id: string; eyebrow: string; title: string; description: string; details: string; emptyTitle: string; emptyDescription: string; reverse?: boolean; children?: ReactNode }) {
   return (
@@ -151,7 +186,9 @@ function ActionsPage() {
         details="Nesta seção apresentaremos as palestras realizadas, com o tema abordado, o público alcançado e as imagens do momento. O objetivo é mostrar como a informação circula e apoiar outras pessoas que desejem organizar atividades semelhantes."
         emptyTitle="Programação em preparação"
         emptyDescription="Os temas, os locais e os relatos das palestras realizadas serão incluídos aqui, acompanhados das fotos de cada atividade."
-      />
+      >
+        {palestraCiirGallery}
+      </ActionSection>
 
       <ActionSection
         id="acoes-de-inclusao"
@@ -163,7 +200,7 @@ function ActionsPage() {
         emptyDescription="As fotos, as legendas e os textos das próximas ações de inclusão serão publicados nesta seção."
         reverse
       >
-        <CarnararosGallery />
+        {carnararosGallery}
       </ActionSection>
 
       <section className="site-container pb-14">
