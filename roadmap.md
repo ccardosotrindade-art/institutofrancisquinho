@@ -26,5 +26,6 @@
 - [x] Add the full-width paper-heart hero to the “Como Ajudar” page
 - [x] Replace the second and third Home carousel images with the supplied lecture and crowd photos
 - [x] Add the Carnararos 2026 (Breves – Marajó – Pará) photo gallery to the “Ações de Inclusão” section
-- [ ] Add real photos, captions, and texts to each section of “Nossas Ações e Eventos” (waiting for the family’s descriptions of each event, lecture, and remaining actions)
+- [x] Add real photos, captions, and texts to "Ações de Inclusão" (Carnararos 2026, 12 photos) and "Palestras" (CIIR Belém-PA, 6 photos)
+- [ ] Add photos, captions, and texts to "Participação em Eventos" and further actions (waiting for the family's materials)
 
