@@ -198,7 +198,7 @@ function ActionsPage() {
         emptyDescription="As fotos, as legendas e os textos das próximas ações de inclusão serão publicados nesta seção."
         reverse
       >
-        <CarnararosGallery />
+        {carnararosGallery}
       </ActionSection>
 
       <section className="site-container pb-14">
