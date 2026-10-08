@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { CalendarDays, HandHeart, Mic, type LucideIcon } from "lucide-react";
 import { ContactPanel, EmptyState, PageHero, SectionTitle } from "@/components/site";
@@ -94,9 +95,13 @@ function ActionSection({ id, eyebrow, title, description, details, emptyTitle, e
       <div className="site-container section-space">
         <SectionTitle eyebrow={eyebrow} title={title} description={description} />
         <p className="mt-6 max-w-3xl leading-7 text-muted-foreground">{details}</p>
-        <div className="mt-8 max-w-3xl">
-          {children ?? <EmptyState title={emptyTitle} description={emptyDescription} />}
-        </div>
+        {children ? (
+          <div className="mt-8">{children}</div>
+        ) : (
+          <div className="mt-8 max-w-3xl">
+            <EmptyState title={emptyTitle} description={emptyDescription} />
+          </div>
+        )}
       </div>
     </section>
   );
