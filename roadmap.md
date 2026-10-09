@@ -29,4 +29,5 @@
 - [x] Add real photos, captions, and texts to "Ações de Inclusão" (Carnararos 2026, 12 photos) and "Palestras" (CIIR Belém-PA, 6 photos)
 - [ ] Add photos, captions, and texts to "Participação em Eventos" and further actions (waiting for the family's materials)
 - [x] Add the four supplied UNOPAR lecture photos with conservative quality improvements and verify the gallery
+- [x] Remove the withdrawn UNOPAR photo (school courtyard) and state in the subtitle that the lecture was about rare diseases
 
