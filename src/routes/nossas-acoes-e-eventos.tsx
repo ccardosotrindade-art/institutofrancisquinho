@@ -22,7 +22,6 @@ import palestraCiir03 from "@/assets/palestra-ciir-03.jpg.asset.json";
 import palestraCiir04 from "@/assets/palestra-ciir-04.jpg.asset.json";
 import palestraCiir05 from "@/assets/palestra-ciir-05.jpg.asset.json";
 import palestraCiir06 from "@/assets/palestra-ciir-06.jpg.asset.json";
-import palestraUnopar01 from "@/assets/palestra-unopar-01.jpg.asset.json";
 import palestraUnopar02 from "@/assets/palestra-unopar-02.jpg.asset.json";
 import palestraUnopar03 from "@/assets/palestra-unopar-03.jpg.asset.json";
 import palestraUnopar04 from "@/assets/palestra-unopar-04.jpg.asset.json";
@@ -129,7 +128,6 @@ const palestraCiirGallery = (
 );
 
 const palestraUnoparPhotos = [
-  { src: palestraUnopar01.url, alt: "Palestrante falando ao microfone para crianças sentadas em um espaço de atividades" },
   { src: palestraUnopar02.url, alt: "Palestrante com microfone e camiseta com a ilustração de Francisquinho" },
   { src: palestraUnopar03.url, alt: "Palestrante no palco diante da apresentação com a pergunta O que significa raro?" },
   { src: palestraUnopar04.url, alt: "Participantes reunidos no auditório com as mãos levantadas ao final da palestra" },
@@ -139,9 +137,9 @@ const palestraUnoparGallery = (
   <ActivityGallery
     eyebrow="Palestra"
     title="Palestra na UNOPAR - Breves-PA"
-    description="Registros fotográficos da palestra na UNOPAR, em Breves – PA."
+    description="Registros fotográficos da palestra sobre doenças raras realizada na UNOPAR, em Breves – PA."
     photos={palestraUnoparPhotos}
-    srCaption="Quatro fotos enviadas para a palestra na UNOPAR, em Breves – PA."
+    srCaption="Fotos da palestra sobre doenças raras na UNOPAR, em Breves – PA."
   />
 );
 
