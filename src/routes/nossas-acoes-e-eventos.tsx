@@ -108,10 +108,10 @@ const carnararosGallery = (
 );
 
 const palestraCiirPhotos = [
-  { src: palestraCiir01.url, alt: "Famílias, pessoas em cadeiras de rodas e equipe reunidas no saguão do CIIR durante a palestra" },
   { src: palestraCiir02.url, alt: "Palestrante falando ao público sentado em frente ao mural colorido do CIIR" },
   { src: palestraCiir03.url, alt: "Visão ampla do saguão do CIIR com o público reunido para a palestra" },
   { src: palestraCiir05.url, alt: "Público reunido no saguão do CIIR, com o letreiro do Centro Integrado de Inclusão e Reabilitação ao fundo" },
+  { src: palestraCiir01.url, alt: "Famílias, pessoas em cadeiras de rodas e equipe reunidas no saguão do CIIR durante a palestra" },
   { src: palestraCiir06.url, alt: "Saguão do CIIR com pássaros de papel suspensos e o público acompanhando a palestra" },
 ] as const;
 
