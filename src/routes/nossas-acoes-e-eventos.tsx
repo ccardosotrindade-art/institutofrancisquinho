@@ -19,7 +19,6 @@ import carnararos12 from "@/assets/carnararos-2026-12.jpg.asset.json";
 import palestraCiir01 from "@/assets/palestra-ciir-01.jpg.asset.json";
 import palestraCiir02 from "@/assets/palestra-ciir-02.jpg.asset.json";
 import palestraCiir03 from "@/assets/palestra-ciir-03.jpg.asset.json";
-import palestraCiir04 from "@/assets/palestra-ciir-04.jpg.asset.json";
 import palestraCiir05 from "@/assets/palestra-ciir-05.jpg.asset.json";
 import palestraCiir06 from "@/assets/palestra-ciir-06.jpg.asset.json";
 import palestraUnopar02 from "@/assets/palestra-unopar-02.jpg.asset.json";
@@ -112,7 +111,6 @@ const palestraCiirPhotos = [
   { src: palestraCiir01.url, alt: "Famílias, pessoas em cadeiras de rodas e equipe reunidas no saguão do CIIR durante a palestra" },
   { src: palestraCiir02.url, alt: "Palestrante falando ao público sentado em frente ao mural colorido do CIIR" },
   { src: palestraCiir03.url, alt: "Visão ampla do saguão do CIIR com o público reunido para a palestra" },
-  { src: palestraCiir04.url, alt: "Famílias assistindo à palestra no saguão do CIIR" },
   { src: palestraCiir05.url, alt: "Público reunido no saguão do CIIR, com o letreiro do Centro Integrado de Inclusão e Reabilitação ao fundo" },
   { src: palestraCiir06.url, alt: "Saguão do CIIR com pássaros de papel suspensos e o público acompanhando a palestra" },
 ] as const;
